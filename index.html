@@ -1,180 +1,254 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>John Leinard Javier | Software Engineer — PL/SQL & Database Systems</title>
-  <link rel="stylesheet" href="style.css">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500;600&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>John Leinard Javier | Software Engineer</title>
+  
+  <!-- Favicon: Replace 'your-icon-filename.png' with the actual path or filename of your saved image -->
+  <link rel="icon" type="image/png" href="your-icon-filename.png">
+  <!-- Optional: For older browsers / .ico formats -->
+  <!-- <link rel="shortcut icon" href="favicon.ico" type="image/x-icon"> -->
+
+  <style>
+    /* Reset & Base Styles */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Segoe UI', -apple-system, BlinkMacSystemFont, Roboto, sans-serif;
+    }
+
+    body {
+      background-color: #0f172a;
+      color: #f8fafc;
+      scroll-behavior: smooth;
+    }
+
+    /* Hero Landing Screen */
+    .hero-container {
+      height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      padding: 20px;
+      background: radial-gradient(circle at center, #1e293b 0%, #0f172a 100%);
+    }
+
+    .greeting {
+      font-size: 1.25rem;
+      color: #38bdf8;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      margin-bottom: 15px;
+      font-weight: 600;
+    }
+
+    .main-title {
+      font-size: 3.5rem;
+      font-weight: 800;
+      margin-bottom: 10px;
+      background: linear-gradient(to right, #ffffff, #94a3b8);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .role-title {
+      font-size: 1.8rem;
+      color: #94a3b8;
+      margin-bottom: 40px;
+      font-weight: 400;
+    }
+
+    /* CTA Button */
+    .cta-button {
+      padding: 16px 36px;
+      font-size: 1.1rem;
+      font-weight: 600;
+      color: #0f172a;
+      background-color: #38bdf8;
+      border: none;
+      border-radius: 50px;
+      cursor: pointer;
+      box-shadow: 0 10px 25px -5px rgba(56, 189, 248, 0.4);
+      transition: all 0.3s ease;
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      text-decoration: none;
+    }
+
+    .cta-button:hover {
+      background-color: #0284c7;
+      color: #ffffff;
+      transform: translateY(-3px);
+      box-shadow: 0 15px 30px -5px rgba(56, 189, 248, 0.6);
+    }
+
+    /* Featured Work Section */
+    .work-container {
+      min-height: 100vh;
+      padding: 100px 20px;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .section-title {
+      font-size: 2.2rem;
+      margin-bottom: 40px;
+      color: #f8fafc;
+      border-bottom: 2px solid #334155;
+      padding-bottom: 10px;
+    }
+
+    .projects-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+      gap: 30px;
+    }
+
+    .project-card {
+      background-color: #1e293b;
+      border: 1px solid #334155;
+      border-radius: 12px;
+      padding: 30px;
+      transition: transform 0.3s ease, border-color 0.3s ease;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .project-card:hover {
+      transform: translateY(-5px);
+      border-color: #38bdf8;
+    }
+
+    .card-icon {
+      width: 48px;
+      height: 48px;
+      background-color: #0f172a;
+      border: 1px solid #334155;
+      border-radius: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 20px;
+      color: #38bdf8;
+    }
+
+    .project-card h3 {
+      font-size: 1.4rem;
+      color: #f8fafc;
+      margin-bottom: 12px;
+    }
+
+    .project-card p {
+      color: #94a3b8;
+      font-size: 0.95rem;
+      line-height: 1.6;
+      margin-bottom: 20px;
+      flex-grow: 1;
+    }
+
+    .tech-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+
+    .tag {
+      background-color: #0f172a;
+      color: #38bdf8;
+      font-size: 0.8rem;
+      padding: 4px 12px;
+      border-radius: 20px;
+      border: 1px solid #334155;
+    }
+
+    @media (max-width: 768px) {
+      .main-title {
+        font-size: 2.5rem;
+      }
+      .role-title {
+        font-size: 1.3rem;
+      }
+    }
+  </style>
 </head>
 <body>
 
-  <div class="layout">
-    <!-- Fixed Sidebar -->
-    <aside class="sidebar">
-      <div class="profile">
-        <div class="avatar">JLJ</div>
-        <h1 class="name">John Leinard Javier</h1>
-        <p class="role">Software Engineer (PL/SQL & Database Systems)</p>
-        <p class="location">📍 Cabuyao, Laguna, Philippines</p>
-      </div>
+  <!-- Landing / Intro UI -->
+  <section class="hero-container">
+    <p class="greeting">Hi, this is</p>
+    <h1 class="main-title">John Leinard Javier</h1>
+    <h2 class="role-title">Software Engineer</h2>
+    
+    <a href="#work" class="cta-button">
+      View My Work
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+        <line x1="12" y1="5" x2="12" y2="19"></line>
+        <polyline points="19 12 12 19 5 12"></polyline>
+      </svg>
+    </a>
+  </section>
 
-      <nav class="side-nav">
-        <a href="#about" class="nav-item">01. // about</a>
-        <a href="#experience" class="nav-item">02. // experience</a>
-        <a href="#skills" class="nav-item">03. // skills</a>
-        <a href="#education" class="nav-item">04. // education</a>
-        <a href="#contact" class="nav-item">05. // contact</a>
-      </nav>
+  <!-- Work / Projects UI -->
+  <section id="work" class="work-container">
+    <h2 class="section-title">Featured Work</h2>
 
-      <div class="socials">
-        <a href="mailto:javierjohnleinard@gmail.com" target="_blank">Email</a>
-        <a href="https://github.com/LJLJLJS" target="_blank">GitHub</a>
-        <a href="https://johnleinardjavier.com" target="_blank">Website</a>
-      </div>
-    </aside>
-
-    <!-- Main Content Stream -->
-    <main class="content">
+    <div class="projects-grid">
       
-      <!-- About -->
-      <section id="about" class="section">
-        <h2 class="section-heading"><span>01.</span> About Me</h2>
-        <p class="bio">
-          Software Engineer with 5+ years of hands-on experience in full-lifecycle software development, database systems, and enterprise workflow optimization. Skilled in writing clean, efficient, and maintainable code using best design patterns, with strong proficiency in PL/SQL, SQL, JavaScript (ES12), and Python. Proven track record in Agile environments collaborating closely with Business Analysts, troubleshooting complex production issues, leading code reviews, and delivering high-quality CRM, compliance, and enterprise module enhancements.
-        </p>
-      </section>
-
-      <!-- Experience -->
-      <section id="experience" class="section">
-        <h2 class="section-heading"><span>02.</span> Experience</h2>
-        
-        <div class="exp-card">
-          <div class="exp-header">
-            <h3>Software Engineer & Tech Lead <span class="at">@ Accenture, Inc.</span></h3>
-            <span class="period">Sept 2025 – Present</span>
-          </div>
-          <ul>
-            <li>Engineered clean, maintainable backend workflows and modules, participating in the full SDLC from requirements analysis to testing and production deployment.</li>
-            <li>Enforced strict peer code review standards and design patterns across squad releases, providing constructive feedback and mentoring junior developers to elevate overall code quality.</li>
-            <li>Collaborated with Business Analysts and cross-functional teams in Agile sprints—contributing directly to task planning, effort estimation, backlog refinement, and sprint reviews.</li>
-            <li>Maintained zero-defect production deployment standards while ensuring full compliance with non-financial risk, security, and operational governance frameworks.</li>
-          </ul>
+      <div class="project-card">
+        <div class="card-icon">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <polyline points="16 18 22 12 16 6"></polyline>
+            <polyline points="8 6 2 12 8 18"></polyline>
+          </svg>
         </div>
-
-        <div class="exp-card">
-          <div class="exp-header">
-            <h3>Software Engineer / Database Operations Analyst <span class="at">@ Accenture, Inc.</span></h3>
-            <span class="period">Apr 2023 – Aug 2025</span>
-          </div>
-          <ul>
-            <li>Designed and optimized complex SQL queries, database stored procedures, and automated bulk data integration pipelines across enterprise environments.</li>
-            <li>Troubleshot and debugged critical production issues and execution logs, rapidly diagnosing root causes to minimize platform downtime and preserve data integrity.</li>
-            <li>Developed RESTful API integrations and self-service features in ServiceNow, automating manual touchpoints for client onboarding, CRM workflows, and user management.</li>
-            <li>Managed end-to-end update set and database migrations across staging and production environments with a 100% success rate.</li>
-          </ul>
+        <h3>Enterprise Platform Integration</h3>
+        <p>Architected end-to-end automation workflows, seamless API integrations, and scalable business logic across cloud enterprise software platforms.</p>
+        <div class="tech-tags">
+          <span class="tag">JavaScript</span>
+          <span class="tag">REST APIs</span>
+          <span class="tag">Workflow Automation</span>
         </div>
+      </div>
 
-        <div class="exp-card">
-          <div class="exp-header">
-            <h3>Associate Software Engineer <span class="at">@ Accenture, Inc.</span></h3>
-            <span class="period">Aug 2021 – Mar 2023</span>
-          </div>
-          <ul>
-            <li>Wrote custom scripts and database fix scripts (JavaScript ES12 / SQL) to resolve complex data discrepancies and operational edge cases.</li>
-            <li>Served as technical Point of Contact (POC), driving daily task distribution and earning 3 technical cloud certifications to set delivery benchmarks for the team.</li>
-          </ul>
+      <div class="project-card">
+        <div class="card-icon">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <rect x="2" y="3" width="20" height="14" rx="2" ry="2"></rect>
+            <line x1="8" y1="21" x2="16" y2="21"></line>
+            <line x1="12" y1="17" x2="12" y2="21"></line>
+          </svg>
         </div>
+        <h3>Full-Stack Application Development</h3>
+        <p>Designed and built high-performance microservices and dynamic user interfaces focused on speed, efficiency, and scale.</p>
+        <div class="tech-tags">
+          <span class="tag">TypeScript</span>
+          <span class="tag">React</span>
+          <span class="tag">Node.js</span>
+        </div>
+      </div>
 
-        <div class="exp-card">
-          <div class="exp-header">
-            <h3>Software Developer Intern <span class="at">@ Questronix Corporation</span></h3>
-            <span class="period">Sep 2020 – Jan 2021</span>
-          </div>
-          <ul>
-            <li>Refactored backend modules and payment system configurations using Python and SQL, assisting with API integrations and database maintenance.</li>
-          </ul>
+      <div class="project-card">
+        <div class="card-icon">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M18 10h-1.26A8 8 0 1 0 9 20h9a5 5 0 0 0 0-10z"></path>
+          </svg>
         </div>
-      </section>
+        <h3>Cloud & Infrastructure Engineering</h3>
+        <p>Implemented CI/CD pipelines, containerized microservices, and database query optimizations for production applications.</p>
+        <div class="tech-tags">
+          <span class="tag">Docker</span>
+          <span class="tag">PostgreSQL</span>
+          <span class="tag">CI/CD</span>
+        </div>
+      </div>
 
-      <!-- Skills -->
-      <section id="skills" class="section">
-        <h2 class="section-heading"><span>03.</span> Skills & Technical Capabilities</h2>
-        
-        <div class="skill-group">
-          <h4>Programming & Database Systems</h4>
-          <div class="pill-container">
-            <span class="pill">PL/SQL</span>
-            <span class="pill">SQL / Relational Databases</span>
-            <span class="pill">Database Design & Query Tuning</span>
-            <span class="pill">JavaScript (ES12)</span>
-            <span class="pill">Python</span>
-            <span class="pill">RESTful APIs & JSON/XML</span>
-            <span class="pill">Stored Procedures & Staging</span>
-          </div>
-        </div>
-
-        <div class="skill-group">
-          <h4>Engineering Practices & Agile</h4>
-          <div class="pill-container">
-            <span class="pill">Agile / Scrum Methodologies</span>
-            <span class="pill">Sprint Planning & Estimation</span>
-            <span class="pill">Code Reviews & Mentorship</span>
-            <span class="pill">Production Troubleshooting</span>
-            <span class="pill">Clean Code & Design Patterns</span>
-            <span class="pill">Git / Version Control</span>
-          </div>
-        </div>
-
-        <div class="skill-group">
-          <h4>Domain & Enterprise Systems</h4>
-          <div class="pill-container">
-            <span class="pill">CRM & CLM Workflows</span>
-            <span class="pill">Compliance & Non-Financial Risk</span>
-            <span class="pill">Banking / Financial Process Awareness</span>
-            <span class="pill">ServiceNow Enterprise Platform</span>
-            <span class="pill">Cloud Infrastructure (AWS / Alibaba)</span>
-          </div>
-        </div>
-      </section>
-
-      <!-- Education -->
-      <section id="education" class="section">
-        <h2 class="section-heading"><span>04.</span> Education & Certifications</h2>
-        <div class="edu-box">
-          <h3>Bachelor of Science in Computer Engineering</h3>
-          <p class="school">Pamantasan ng Cabuyao | 2015 – 2021</p>
-        </div>
-        <div class="edu-box">
-          <h3>Technical Certifications</h3>
-          <ul class="cert-bullets">
-            <li>Alibaba Cloud Certified Associate (ACA)</li>
-            <li>Alibaba Cloud Certified Professional (ACP)</li>
-            <li>Alibaba Cloud Certified Developer</li>
-          </ul>
-        </div>
-      </section>
-
-      <!-- Contact -->
-      <section id="contact" class="section">
-        <h2 class="section-heading"><span>05.</span> Get In Touch</h2>
-        <div class="contact-card">
-          <p>Interested in discussing Software Engineering, PL/SQL development, and CRM/Compliance solution delivery? Reach out directly:</p>
-          <div class="contact-links">
-            <p><strong>Email:</strong> <a href="mailto:javierjohnleinard@gmail.com">javierjohnleinard@gmail.com</a></p>
-            <p><strong>Phone / WhatsApp / Viber:</strong> +63 955 912 8627</p>
-            <p><strong>Location:</strong> Cabuyao, Laguna, Philippines</p>
-          </div>
-        </div>
-      </section>
-
-      <footer>
-        <p>&copy; 2026 John Leinard Javier. Software Engineering & Database Systems.</p>
-      </footer>
-    </main>
-  </div>
+    </div>
+  </section>
 
 </body>
 </html>
