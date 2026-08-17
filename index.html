@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>John Leinard Javier | Software Engineer</title>
 
-  <!-- FAVICON (Replace 'your-icon-filename.png' with your saved image file) -->
+  <!-- FAVICON -->
   <link rel="icon" type="image/png" href="lj.png">
 
   <!-- Google Fonts: Inter & Outfit -->
@@ -17,16 +17,16 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"/>
 
   <style>
-    /* Global Variables */
+    /* Global Variables - Tulle White Palette */
     :root {
-      --bg-color: #0b0f17;
-      --card-bg: #111827;
-      --card-border: #1f293d;
-      --accent-color: #3b82f6;
-      --accent-hover: #2563eb;
-      --text-main: #f3f4f6;
-      --text-muted: #9ca3af;
-      --nav-bg: rgba(17, 24, 39, 0.85);
+      --bg-color: #f8fafc;
+      --card-bg: #ffffff;
+      --card-border: #e2e8f0;
+      --accent-color: #2563eb;
+      --accent-hover: #1d4ed8;
+      --text-main: #0f172a;
+      --text-muted: #64748b;
+      --nav-bg: rgba(255, 255, 255, 0.85);
     }
 
     * {
@@ -60,14 +60,14 @@
       justify-content: space-between;
       align-items: center;
       z-index: 1000;
-      box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.5);
+      box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.05);
     }
 
     .nav-logo {
       font-family: 'Outfit', sans-serif;
       font-weight: 800;
       font-size: 1.2rem;
-      color: #fff;
+      color: var(--text-main);
       text-decoration: none;
     }
 
@@ -108,6 +108,7 @@
       margin-bottom: 40px;
       position: relative;
       display: inline-block;
+      color: var(--text-main);
     }
 
     .section-title::after {
@@ -151,7 +152,7 @@
       font-weight: 800;
       line-height: 1.1;
       margin-bottom: 12px;
-      color: #fff;
+      color: var(--text-main);
     }
 
     .hero-role {
@@ -200,29 +201,30 @@
       border-radius: 30px;
       text-decoration: none;
       font-weight: 600;
+      background: var(--card-bg);
       transition: background 0.3s, border-color 0.3s;
     }
 
     .btn-secondary:hover {
-      background: var(--card-bg);
       border-color: var(--accent-color);
+      color: var(--accent-color);
     }
 
-    /* Hero Card / Profile Side */
+    /* Profile Card Side */
     .profile-card {
       background: var(--card-bg);
       border: 1px solid var(--card-border);
       border-radius: 20px;
       padding: 30px;
       text-align: center;
-      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.04);
     }
 
     .profile-avatar {
       width: 120px;
       height: 120px;
       border-radius: 50%;
-      background: var(--card-border);
+      background: #f1f5f9;
       margin: 0 auto 20px;
       display: flex;
       align-items: center;
@@ -243,7 +245,7 @@
       width: 40px;
       height: 40px;
       border-radius: 50%;
-      background: #1a2332;
+      background: #f1f5f9;
       color: var(--text-main);
       display: flex;
       align-items: center;
@@ -258,7 +260,7 @@
       transform: translateY(-3px);
     }
 
-    /* Projects Section Grid */
+    /* Projects Grid */
     .projects-grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -273,18 +275,20 @@
       display: flex;
       flex-direction: column;
       justify-content: space-between;
-      transition: transform 0.3s, border-color 0.3s;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.02);
+      transition: transform 0.3s, border-color 0.3s, box-shadow 0.3s;
     }
 
     .project-card:hover {
       transform: translateY(-6px);
       border-color: var(--accent-color);
+      box-shadow: 0 12px 24px rgba(37, 99, 235, 0.08);
     }
 
     .project-card h3 {
       font-size: 1.3rem;
       margin-bottom: 12px;
-      color: #fff;
+      color: var(--text-main);
     }
 
     .project-card p {
@@ -301,12 +305,12 @@
     }
 
     .tech-pill {
-      background: #1a2332;
+      background: #eff6ff;
       color: var(--accent-color);
       font-size: 0.8rem;
       padding: 4px 12px;
       border-radius: 12px;
-      font-weight: 500;
+      font-weight: 600;
     }
 
     .project-links {
@@ -360,6 +364,7 @@
       display: block;
       font-size: 0.9rem;
       font-weight: 600;
+      color: var(--text-main);
     }
 
     /* Contact Section */
@@ -384,7 +389,7 @@
     .contact-item i {
       width: 45px;
       height: 45px;
-      background: var(--card-bg);
+      background: #f1f5f9;
       border: 1px solid var(--card-border);
       border-radius: 50%;
       display: flex;
@@ -401,16 +406,17 @@
       display: flex;
       flex-direction: column;
       gap: 18px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.02);
     }
 
     .form-group input,
     .form-group textarea {
       width: 100%;
       padding: 14px;
-      background: #0b0f17;
+      background: #f8fafc;
       border: 1px solid var(--card-border);
       border-radius: 8px;
-      color: #fff;
+      color: var(--text-main);
       font-size: 0.95rem;
       outline: none;
       transition: border-color 0.3s;
@@ -419,6 +425,7 @@
     .form-group input:focus,
     .form-group textarea:focus {
       border-color: var(--accent-color);
+      background: #ffffff;
     }
 
     footer {
@@ -441,7 +448,7 @@
         grid-template-columns: 1fr;
       }
       .nav-links {
-        display: none; /* Can be expanded with mobile menu toggle */
+        display: none;
       }
     }
   </style>
@@ -472,7 +479,6 @@
             Full-Stack & Enterprise Solutions Engineer specializing in scalable microservices architecture, automated workflows, and user-centered design.
           </p>
           <div class="hero-btns">
-            <!-- Direct CTA button redirecting to work -->
             <a href="#projects" class="btn-primary">
               View My Work <i class="fa-solid fa-arrow-down"></i>
             </a>
@@ -491,7 +497,7 @@
           <div class="social-links">
             <a href="#" target="_blank" title="GitHub"><i class="fa-brands fa-github"></i></a>
             <a href="#" target="_blank" title="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
-            <a href="mailto:your-email@domain.com" title="Email"><i class="fa-solid fa-envelope"></i></a>
+            <a href="mailto:johnleinardjavier@gmail.com" title="Email"><i class="fa-solid fa-envelope"></i></a>
           </div>
         </div>
       </div>
@@ -502,7 +508,6 @@
       <h2 class="section-title">Featured Work</h2>
       
       <div class="projects-grid">
-        <!-- Project Card 1 -->
         <div class="project-card">
           <div>
             <h3>Enterprise Platform Automation</h3>
@@ -519,7 +524,6 @@
           </div>
         </div>
 
-        <!-- Project Card 2 -->
         <div class="project-card">
           <div>
             <h3>Full-Stack Web Application</h3>
@@ -536,7 +540,6 @@
           </div>
         </div>
 
-        <!-- Project Card 3 -->
         <div class="project-card">
           <div>
             <h3>Cloud & Microservices Infrastructure</h3>
@@ -608,20 +611,20 @@
           </div>
         </div>
 
-<form class="contact-form" action="https://formspree.io/f/xgawnagn" method="POST">
-  <div class="form-group">
-    <input type="text" name="name" placeholder="Your Name" required />
-  </div>
-  <div class="form-group">
-    <input type="email" name="email" placeholder="Your Email" required />
-  </div>
-  <div class="form-group">
-    <textarea name="message" rows="4" placeholder="Your Message" required></textarea>
-  </div>
-  <button type="submit" class="btn-primary" style="border: none; cursor: pointer;">
-    Send Message <i class="fa-solid fa-paper-plane"></i>
-  </button>
-</form>
+        <form class="contact-form" action="https://formspree.io/f/xgawnagn" method="POST">
+          <div class="form-group">
+            <input type="text" name="name" placeholder="Your Name" required />
+          </div>
+          <div class="form-group">
+            <input type="email" name="email" placeholder="Your Email" required />
+          </div>
+          <div class="form-group">
+            <textarea name="message" rows="4" placeholder="Your Message" required></textarea>
+          </div>
+          <button type="submit" class="btn-primary" style="border: none; cursor: pointer;">
+            Send Message <i class="fa-solid fa-paper-plane"></i>
+          </button>
+        </form>
       </div>
     </section>
 
@@ -630,8 +633,8 @@
     </footer>
 
   </div>
-  
-<script>
+
+  <script>
     const form = document.querySelector('.contact-form');
 
     form.addEventListener('submit', async (e) => {
