@@ -13,19 +13,19 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@600;700;800&display=swap" rel="stylesheet">
 
-  <!-- FontAwesome for Icons -->
+  <!-- FontAwesome Icons -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"/>
 
   <style>
-    /* Global Variables - Tulle White Palette */
+    /* Global Variables - Tulle White Theme */
     :root {
-      --bg-color: #f8fafc;
-      --card-bg: #ffffff;
-      --card-border: #e2e8f0;
-      --accent-color: #2563eb;
-      --accent-hover: #1d4ed8;
-      --text-main: #0f172a;
-      --text-muted: #64748b;
+      --bg-color: #f8fafc;          /* Tulle White Background */
+      --card-bg: #ffffff;          /* Card Pure White */
+      --card-border: #e2e8f0;      /* Light Border */
+      --accent-color: #2563eb;     /* Royal Blue Accent */
+      --accent-hover: #1d4ed8;     /* Darker Blue Hover */
+      --text-main: #0f172a;        /* High-Contrast Charcoal Text */
+      --text-muted: #64748b;       /* Muted Slate Text */
       --nav-bg: rgba(255, 255, 255, 0.85);
     }
 
@@ -43,7 +43,73 @@
       line-height: 1.6;
     }
 
-    /* Floating Navigation Bar */
+    /* Utility Class for Hiding Elements */
+    .hidden {
+      display: none !important;
+    }
+
+    /* ----------------------------------------------------
+       PAGE 1: LANDING HERO SCREEN
+    ---------------------------------------------------- */
+    .hero-screen {
+      min-height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      padding: 20px;
+      background-color: var(--bg-color);
+    }
+
+    .greeting {
+      font-size: 1.2rem;
+      color: var(--accent-color);
+      font-weight: 600;
+      margin-bottom: 12px;
+      text-transform: uppercase;
+      letter-spacing: 1.5px;
+    }
+
+    .hero-name {
+      font-family: 'Outfit', sans-serif;
+      font-size: clamp(2.8rem, 6vw, 4.8rem);
+      font-weight: 800;
+      line-height: 1.1;
+      margin-bottom: 12px;
+      color: var(--text-main);
+    }
+
+    .hero-role {
+      font-size: 1.6rem;
+      color: var(--text-muted);
+      margin-bottom: 36px;
+      font-weight: 500;
+    }
+
+    .btn-primary {
+      background: var(--accent-color);
+      color: #ffffff;
+      padding: 14px 32px;
+      border-radius: 30px;
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 1rem;
+      border: none;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      transition: background 0.3s, transform 0.2s;
+    }
+
+    .btn-primary:hover {
+      background: var(--accent-hover);
+      transform: translateY(-2px);
+    }
+
+    /* ----------------------------------------------------
+       PAGE 2: MAIN PORTFOLIO & NAVIGATION
+    ---------------------------------------------------- */
     header {
       position: fixed;
       top: 20px;
@@ -73,39 +139,42 @@
 
     .nav-links {
       display: flex;
-      gap: 24px;
+      gap: 16px;
       list-style: none;
     }
 
-    .nav-links a {
+    .nav-tab {
+      background: none;
+      border: none;
       color: var(--text-muted);
-      text-decoration: none;
-      font-size: 0.9rem;
-      font-weight: 500;
-      transition: color 0.3s;
+      font-size: 0.95rem;
+      font-weight: 600;
+      cursor: pointer;
+      padding: 6px 14px;
+      border-radius: 20px;
+      transition: color 0.3s, background 0.3s;
     }
 
-    .nav-links a:hover {
+    .nav-tab:hover {
       color: var(--accent-color);
     }
 
-    /* Container */
-    .container {
-      max-width: 1050px;
-      margin: 0 auto;
-      padding: 0 20px;
+    .nav-tab.active {
+      color: var(--accent-color);
+      background: #eff6ff;
     }
 
-    /* Section Styling */
-    section {
-      padding: 120px 0 60px 0;
+    .container {
+      max-width: 950px;
+      margin: 0 auto;
+      padding: 120px 20px 60px 20px;
     }
 
     .section-title {
       font-family: 'Outfit', sans-serif;
       font-size: 2.2rem;
       font-weight: 700;
-      margin-bottom: 40px;
+      margin-bottom: 30px;
       position: relative;
       display: inline-block;
       color: var(--text-main);
@@ -122,128 +191,39 @@
       border-radius: 2px;
     }
 
-    /* Hero Section */
-    .hero {
-      min-height: 100vh;
-      display: flex;
-      align-items: center;
-      padding-top: 100px;
-    }
-
-    .hero-wrapper {
-      display: grid;
-      grid-template-columns: 1fr 320px;
-      gap: 50px;
-      align-items: center;
-    }
-
-    .greeting {
-      font-size: 1.1rem;
-      color: var(--accent-color);
-      font-weight: 600;
-      margin-bottom: 10px;
-      text-transform: uppercase;
-      letter-spacing: 1px;
-    }
-
-    .hero-name {
+    .subsection-title {
       font-family: 'Outfit', sans-serif;
-      font-size: clamp(2.5rem, 5vw, 4rem);
-      font-weight: 800;
-      line-height: 1.1;
-      margin-bottom: 12px;
-      color: var(--text-main);
-    }
-
-    .hero-role {
       font-size: 1.5rem;
-      color: var(--text-muted);
-      margin-bottom: 24px;
-      font-weight: 500;
-    }
-
-    .hero-bio {
-      color: var(--text-muted);
-      font-size: 1rem;
-      margin-bottom: 35px;
-      max-width: 550px;
-    }
-
-    .hero-btns {
-      display: flex;
-      gap: 16px;
-      align-items: center;
-      flex-wrap: wrap;
-    }
-
-    .btn-primary {
-      background: var(--accent-color);
-      color: #fff;
-      padding: 14px 28px;
-      border-radius: 30px;
-      text-decoration: none;
-      font-weight: 600;
-      display: inline-flex;
-      align-items: center;
-      gap: 10px;
-      transition: background 0.3s, transform 0.2s;
-    }
-
-    .btn-primary:hover {
-      background: var(--accent-hover);
-      transform: translateY(-2px);
-    }
-
-    .btn-secondary {
-      border: 1px solid var(--card-border);
+      font-weight: 700;
+      margin: 40px 0 20px 0;
       color: var(--text-main);
-      padding: 14px 28px;
-      border-radius: 30px;
-      text-decoration: none;
-      font-weight: 600;
-      background: var(--card-bg);
-      transition: background 0.3s, border-color 0.3s;
     }
 
-    .btn-secondary:hover {
-      border-color: var(--accent-color);
-      color: var(--accent-color);
-    }
-
-    /* Profile Card Side */
-    .profile-card {
+    /* About Section Styles */
+    .about-card {
       background: var(--card-bg);
       border: 1px solid var(--card-border);
       border-radius: 20px;
-      padding: 30px;
-      text-align: center;
-      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.04);
+      padding: 35px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.02);
+      margin-bottom: 30px;
     }
 
-    .profile-avatar {
-      width: 120px;
-      height: 120px;
-      border-radius: 50%;
-      background: #f1f5f9;
-      margin: 0 auto 20px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 2.5rem;
-      color: var(--accent-color);
-      border: 3px solid var(--accent-color);
+    .bio-text {
+      font-size: 1.1rem;
+      color: var(--text-muted);
+      line-height: 1.8;
+      margin-bottom: 25px;
     }
 
     .social-links {
       display: flex;
-      justify-content: center;
       gap: 15px;
-      margin-top: 20px;
     }
 
     .social-links a {
-      width: 40px;
-      height: 40px;
+      width: 42px;
+      height: 42px;
       border-radius: 50%;
       background: #f1f5f9;
       color: var(--text-main);
@@ -256,15 +236,49 @@
 
     .social-links a:hover {
       background: var(--accent-color);
-      color: #fff;
+      color: #ffffff;
       transform: translateY(-3px);
+    }
+
+    /* Skills Grid */
+    .skills-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+      gap: 18px;
+    }
+
+    .skill-card {
+      background: var(--card-bg);
+      border: 1px solid var(--card-border);
+      border-radius: 12px;
+      padding: 20px;
+      text-align: center;
+      transition: border-color 0.3s, transform 0.2s;
+    }
+
+    .skill-card:hover {
+      border-color: var(--accent-color);
+      transform: translateY(-4px);
+    }
+
+    .skill-card i {
+      font-size: 2rem;
+      color: var(--accent-color);
+      margin-bottom: 10px;
+    }
+
+    .skill-card span {
+      display: block;
+      font-size: 0.9rem;
+      font-weight: 600;
+      color: var(--text-main);
     }
 
     /* Projects Grid */
     .projects-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-      gap: 30px;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 25px;
     }
 
     .project-card {
@@ -333,40 +347,6 @@
       color: var(--accent-color);
     }
 
-    /* Skills Grid */
-    .skills-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
-      gap: 18px;
-    }
-
-    .skill-card {
-      background: var(--card-bg);
-      border: 1px solid var(--card-border);
-      border-radius: 12px;
-      padding: 20px;
-      text-align: center;
-      transition: border-color 0.3s, transform 0.2s;
-    }
-
-    .skill-card:hover {
-      border-color: var(--accent-color);
-      transform: translateY(-4px);
-    }
-
-    .skill-card i {
-      font-size: 2rem;
-      color: var(--accent-color);
-      margin-bottom: 10px;
-    }
-
-    .skill-card span {
-      display: block;
-      font-size: 0.9rem;
-      font-weight: 600;
-      color: var(--text-main);
-    }
-
     /* Contact Section */
     .contact-wrapper {
       display: grid;
@@ -413,7 +393,7 @@
     .form-group textarea {
       width: 100%;
       padding: 14px;
-      background: #f8fafc;
+      background: #ffffff;
       border: 1px solid var(--card-border);
       border-radius: 8px;
       color: var(--text-main);
@@ -425,7 +405,6 @@
     .form-group input:focus,
     .form-group textarea:focus {
       border-color: var(--accent-color);
-      background: #ffffff;
     }
 
     footer {
@@ -434,209 +413,239 @@
       color: var(--text-muted);
       font-size: 0.85rem;
       border-top: 1px solid var(--card-border);
+      margin-top: 60px;
     }
 
-    /* Responsive Design */
-    @media (max-width: 850px) {
-      .hero-wrapper {
-        grid-template-columns: 1fr;
-      }
-      .profile-card {
-        order: -1;
-      }
+    @media (max-width: 768px) {
       .contact-wrapper {
         grid-template-columns: 1fr;
-      }
-      .nav-links {
-        display: none;
       }
     }
   </style>
 </head>
 <body>
 
-  <!-- Navigation -->
-  <header>
-    <a href="#" class="nav-logo">LJ.</a>
-    <ul class="nav-links">
-      <li><a href="#about">About</a></li>
-      <li><a href="#projects">Work</a></li>
-      <li><a href="#skills">Skills</a></li>
-      <li><a href="#contact">Contact</a></li>
-    </ul>
-  </header>
+  <!-- ====================================================
+       PAGE 1: LANDING SCREEN (Intro Only)
+  ==================================================== -->
+  <section id="intro" class="hero-screen">
+    <div class="hero-content">
+      <p class="greeting">Hi, this is</p>
+      <h1 class="hero-name">John Leinard Javier</h1>
+      <h2 class="hero-role">Software Engineer</h2>
+      <button id="viewWorkBtn" class="btn-primary">
+        My Work <i class="fa-solid fa-arrow-right"></i>
+      </button>
+    </div>
+  </section>
 
-  <div class="container">
+  <!-- ====================================================
+       PAGE 2: MAIN PORTFOLIO CONTENT (Hidden Initially)
+  ==================================================== -->
+  <div id="mainPortfolio" class="portfolio-content hidden">
 
-    <!-- Hero Section -->
-    <section id="about" class="hero">
-      <div class="hero-wrapper">
-        <div class="hero-text">
-          <p class="greeting">Hi, this is</p>
-          <h1 class="hero-name">John Leinard Javier</h1>
-          <h2 class="hero-role">Software Engineer</h2>
-          <p class="hero-bio">
-            Full-Stack & Enterprise Solutions Engineer specializing in scalable microservices architecture, automated workflows, and user-centered design.
+    <!-- Header Navigation -->
+    <header>
+      <a href="#" id="homeLogo" class="nav-logo">LJ.</a>
+      <ul class="nav-links">
+        <li><button class="nav-tab active" data-tab="about">About</button></li>
+        <li><button class="nav-tab" data-tab="projects">Projects</button></li>
+        <li><button class="nav-tab" data-tab="contact">Contact</button></li>
+      </ul>
+    </header>
+
+    <div class="container">
+
+      <!-- TAB 1: ABOUT ME & SKILLS -->
+      <section id="about" class="tab-content">
+        <h2 class="section-title">About Me</h2>
+        <div class="about-card">
+          <p class="bio-text">
+            Full-Stack & Enterprise Solutions Engineer specializing in scalable microservices architecture, automated workflows, and user-centered design. Passionate about building robust software solutions that streamline operations and deliver smooth digital experiences.
           </p>
-          <div class="hero-btns">
-            <a href="#projects" class="btn-primary">
-              View My Work <i class="fa-solid fa-arrow-down"></i>
-            </a>
-            <a href="#contact" class="btn-secondary">Contact Me</a>
-          </div>
-        </div>
-
-        <!-- Profile Card -->
-        <div class="profile-card">
-          <div class="profile-avatar">
-            <i class="fa-solid fa-user-ninja"></i>
-          </div>
-          <h3>John Leinard Javier</h3>
-          <p style="color: var(--text-muted); font-size: 0.85rem; margin-top: 4px;">Software Engineer</p>
-          
           <div class="social-links">
             <a href="#" target="_blank" title="GitHub"><i class="fa-brands fa-github"></i></a>
             <a href="#" target="_blank" title="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
             <a href="mailto:johnleinardjavier@gmail.com" title="Email"><i class="fa-solid fa-envelope"></i></a>
           </div>
         </div>
-      </div>
-    </section>
 
-    <!-- Work / Projects Section -->
-    <section id="projects">
-      <h2 class="section-title">Featured Work</h2>
-      
-      <div class="projects-grid">
-        <div class="project-card">
-          <div>
-            <h3>Enterprise Platform Automation</h3>
-            <p>Architected end-to-end automation workflows, custom business logic, and API integrations across cloud platforms.</p>
-            <div class="tech-stack">
-              <span class="tech-pill">JavaScript</span>
-              <span class="tech-pill">REST APIs</span>
-              <span class="tech-pill">IntegrationHub</span>
-            </div>
+        <h3 class="subsection-title">Technical Skills</h3>
+        <div class="skills-grid">
+          <div class="skill-card">
+            <i class="fa-brands fa-js"></i>
+            <span>JavaScript</span>
           </div>
-          <div class="project-links">
-            <a href="#" target="_blank"><i class="fa-brands fa-github"></i> Source Code</a>
-            <a href="#" target="_blank"><i class="fa-solid fa-arrow-up-right-from-square"></i> Demo</a>
+          <div class="skill-card">
+            <i class="fa-brands fa-react"></i>
+            <span>React</span>
+          </div>
+          <div class="skill-card">
+            <i class="fa-brands fa-node-js"></i>
+            <span>Node.js</span>
+          </div>
+          <div class="skill-card">
+            <i class="fa-brands fa-python"></i>
+            <span>Python</span>
+          </div>
+          <div class="skill-card">
+            <i class="fa-brands fa-docker"></i>
+            <span>Docker</span>
+          </div>
+          <div class="skill-card">
+            <i class="fa-solid fa-database"></i>
+            <span>PostgreSQL</span>
           </div>
         </div>
+      </section>
 
-        <div class="project-card">
-          <div>
-            <h3>Full-Stack Web Application</h3>
-            <p>High-performance web software engineered with modern frontend UI frameworks and scalable backend APIs.</p>
-            <div class="tech-stack">
-              <span class="tech-pill">TypeScript</span>
-              <span class="tech-pill">React</span>
-              <span class="tech-pill">Node.js</span>
-            </div>
-          </div>
-          <div class="project-links">
-            <a href="#" target="_blank"><i class="fa-brands fa-github"></i> Source Code</a>
-            <a href="#" target="_blank"><i class="fa-solid fa-arrow-up-right-from-square"></i> Demo</a>
-          </div>
-        </div>
-
-        <div class="project-card">
-          <div>
-            <h3>Cloud & Microservices Infrastructure</h3>
-            <p>Containerized application services, optimized SQL database query performance, and automated CI/CD deployment pipelines.</p>
-            <div class="tech-stack">
-              <span class="tech-pill">Docker</span>
-              <span class="tech-pill">PostgreSQL</span>
-              <span class="tech-pill">CI/CD</span>
-            </div>
-          </div>
-          <div class="project-links">
-            <a href="#" target="_blank"><i class="fa-brands fa-github"></i> Source Code</a>
-            <a href="#" target="_blank"><i class="fa-solid fa-arrow-up-right-from-square"></i> Demo</a>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Skills Section -->
-    <section id="skills">
-      <h2 class="section-title">Technical Skills</h2>
-      <div class="skills-grid">
-        <div class="skill-card">
-          <i class="fa-brands fa-js"></i>
-          <span>JavaScript</span>
-        </div>
-        <div class="skill-card">
-          <i class="fa-brands fa-react"></i>
-          <span>React</span>
-        </div>
-        <div class="skill-card">
-          <i class="fa-brands fa-node-js"></i>
-          <span>Node.js</span>
-        </div>
-        <div class="skill-card">
-          <i class="fa-brands fa-python"></i>
-          <span>Python</span>
-        </div>
-        <div class="skill-card">
-          <i class="fa-brands fa-docker"></i>
-          <span>Docker</span>
-        </div>
-        <div class="skill-card">
-          <i class="fa-solid fa-database"></i>
-          <span>PostgreSQL</span>
-        </div>
-      </div>
-    </section>
-
-    <!-- Contact Section -->
-    <section id="contact">
-      <h2 class="section-title">Get In Touch</h2>
-      <div class="contact-wrapper">
-        <div class="contact-info">
-          <p>Feel free to reach out for collaboration, opportunities, or technical inquiries!</p>
-          <div class="contact-item">
-            <i class="fa-solid fa-envelope"></i>
+      <!-- TAB 2: RECENT PROJECTS -->
+      <section id="projects" class="tab-content hidden">
+        <h2 class="section-title">Recent Projects</h2>
+        <div class="projects-grid">
+          <div class="project-card">
             <div>
-              <strong style="display: block;">Email</strong>
-              <span style="color: var(--text-muted);">johnleinardjavier@gmail.com</span>
+              <h3>Enterprise Platform Automation</h3>
+              <p>Architected end-to-end automation workflows, custom business logic, and API integrations across cloud platforms.</p>
+              <div class="tech-stack">
+                <span class="tech-pill">JavaScript</span>
+                <span class="tech-pill">REST APIs</span>
+                <span class="tech-pill">IntegrationHub</span>
+              </div>
+            </div>
+            <div class="project-links">
+              <a href="#" target="_blank"><i class="fa-brands fa-github"></i> Code</a>
+              <a href="#" target="_blank"><i class="fa-solid fa-arrow-up-right-from-square"></i> Demo</a>
             </div>
           </div>
-          <div class="contact-item">
-            <i class="fa-solid fa-location-dot"></i>
+
+          <div class="project-card">
             <div>
-              <strong style="display: block;">Location</strong>
-              <span style="color: var(--text-muted);">Laguna, PH</span>
+              <h3>Full-Stack Web Application</h3>
+              <p>High-performance web software engineered with modern frontend UI frameworks and scalable backend APIs.</p>
+              <div class="tech-stack">
+                <span class="tech-pill">TypeScript</span>
+                <span class="tech-pill">React</span>
+                <span class="tech-pill">Node.js</span>
+              </div>
+            </div>
+            <div class="project-links">
+              <a href="#" target="_blank"><i class="fa-brands fa-github"></i> Code</a>
+              <a href="#" target="_blank"><i class="fa-solid fa-arrow-up-right-from-square"></i> Demo</a>
+            </div>
+          </div>
+
+          <div class="project-card">
+            <div>
+              <h3>Cloud Infrastructure Services</h3>
+              <p>Containerized application services, optimized SQL database queries, and automated deployment pipelines.</p>
+              <div class="tech-stack">
+                <span class="tech-pill">Docker</span>
+                <span class="tech-pill">PostgreSQL</span>
+                <span class="tech-pill">CI/CD</span>
+              </div>
+            </div>
+            <div class="project-links">
+              <a href="#" target="_blank"><i class="fa-brands fa-github"></i> Code</a>
+              <a href="#" target="_blank"><i class="fa-solid fa-arrow-up-right-from-square"></i> Demo</a>
             </div>
           </div>
         </div>
+      </section>
 
-        <form class="contact-form" action="https://formspree.io/f/xgawnagn" method="POST">
-          <div class="form-group">
-            <input type="text" name="name" placeholder="Your Name" required />
+      <!-- TAB 3: CONTACT -->
+      <section id="contact" class="tab-content hidden">
+        <h2 class="section-title">Get In Touch</h2>
+        <div class="contact-wrapper">
+          <div class="contact-info">
+            <p>Feel free to reach out for collaboration, project inquiries, or full-time opportunities!</p>
+            <div class="contact-item">
+              <i class="fa-solid fa-envelope"></i>
+              <div>
+                <strong style="display: block;">Email</strong>
+                <span style="color: var(--text-muted);">johnleinardjavier@gmail.com</span>
+              </div>
+            </div>
+            <div class="contact-item">
+              <i class="fa-solid fa-location-dot"></i>
+              <div>
+                <strong style="display: block;">Location</strong>
+                <span style="color: var(--text-muted);">Laguna, PH</span>
+              </div>
+            </div>
           </div>
-          <div class="form-group">
-            <input type="email" name="email" placeholder="Your Email" required />
-          </div>
-          <div class="form-group">
-            <textarea name="message" rows="4" placeholder="Your Message" required></textarea>
-          </div>
-          <button type="submit" class="btn-primary" style="border: none; cursor: pointer;">
-            Send Message <i class="fa-solid fa-paper-plane"></i>
-          </button>
-        </form>
-      </div>
-    </section>
 
-    <footer>
-      <p>&copy; 2026 John Leinard Javier. All rights reserved.</p>
-    </footer>
+          <form class="contact-form" action="https://formspree.io/f/xgawnagn" method="POST">
+            <div class="form-group">
+              <input type="text" name="name" placeholder="Your Name" required />
+            </div>
+            <div class="form-group">
+              <input type="email" name="email" placeholder="Your Email" required />
+            </div>
+            <div class="form-group">
+              <textarea name="message" rows="4" placeholder="Your Message" required></textarea>
+            </div>
+            <button type="submit" class="btn-primary">
+              Send Message <i class="fa-solid fa-paper-plane"></i>
+            </button>
+          </form>
+        </div>
+      </section>
 
+      <footer>
+        <p>&copy; 2026 John Leinard Javier. All rights reserved.</p>
+      </footer>
+
+    </div>
   </div>
 
+  <!-- JavaScript Navigation Switcher -->
   <script>
-    const form = document.querySelector('.contact-form');
+    const introScreen = document.getElementById('intro');
+    const mainPortfolio = document.getElementById('mainPortfolio');
+    const viewWorkBtn = document.getElementById('viewWorkBtn');
+    const homeLogo = document.getElementById('homeLogo');
+    const navTabs = document.querySelectorAll('.nav-tab');
+    const tabContents = document.querySelectorAll('.tab-content');
 
+    // Reveal main portfolio and show "About" tab on "My Work" button click
+    viewWorkBtn.addEventListener('click', () => {
+      introScreen.classList.add('hidden');
+      mainPortfolio.classList.remove('hidden');
+      switchTab('about');
+    });
+
+    // Return to landing screen when clicking logo
+    homeLogo.addEventListener('click', (e) => {
+      e.preventDefault();
+      mainPortfolio.classList.add('hidden');
+      introScreen.classList.remove('hidden');
+    });
+
+    // Tab switcher logic
+    navTabs.forEach(tab => {
+      tab.addEventListener('click', () => {
+        const targetTab = tab.getAttribute('data-tab');
+        switchTab(targetTab);
+      });
+    });
+
+    function switchTab(tabId) {
+      navTabs.forEach(t => {
+        t.classList.toggle('active', t.getAttribute('data-tab') === tabId);
+      });
+      tabContents.forEach(content => {
+        if (content.id === tabId) {
+          content.classList.remove('hidden');
+        } else {
+          content.classList.add('hidden');
+        }
+      });
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+
+    // Formspree Contact Form Handler
+    const form = document.querySelector('.contact-form');
     form.addEventListener('submit', async (e) => {
       e.preventDefault();
       const data = new FormData(form);
