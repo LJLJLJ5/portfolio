@@ -603,25 +603,25 @@
             <i class="fa-solid fa-location-dot"></i>
             <div>
               <strong style="display: block;">Location</strong>
-              <span style="color: var(--text-muted);">Available Remotely & On-Site</span>
+              <span style="color: var(--text-muted);">Laguna, PH</span>
             </div>
           </div>
         </div>
 
-        <form class="contact-form" onsubmit="event.preventDefault(); alert('Message sent!');">
-          <div class="form-group">
-            <input type="text" placeholder="Your Name" required />
-          </div>
-          <div class="form-group">
-            <input type="email" placeholder="Your Email" required />
-          </div>
-          <div class="form-group">
-            <textarea rows="4" placeholder="Your Message" required></textarea>
-          </div>
-          <button type="submit" class="btn-primary" style="border: none; cursor: pointer;">
-            Send Message <i class="fa-solid fa-paper-plane"></i>
-          </button>
-        </form>
+<form class="contact-form" action="https://formspree.io/f/xgawnagn" method="POST">
+  <div class="form-group">
+    <input type="text" name="name" placeholder="Your Name" required />
+  </div>
+  <div class="form-group">
+    <input type="email" name="email" placeholder="Your Email" required />
+  </div>
+  <div class="form-group">
+    <textarea name="message" rows="4" placeholder="Your Message" required></textarea>
+  </div>
+  <button type="submit" class="btn-primary" style="border: none; cursor: pointer;">
+    Send Message <i class="fa-solid fa-paper-plane"></i>
+  </button>
+</form>
       </div>
     </section>
 
