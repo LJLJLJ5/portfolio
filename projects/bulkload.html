@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>BulkLoad — Bulk Data Import Tool | John Leinard Javier</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="mock.css">
+<style>
+  body { --accent: #60a5fa; --accent-dim: #3b82f6; --accent-soft: rgba(96,165,250,0.14); }
+</style>
+</head>
+<body>
+<div class="page-wrap">
+
+  <a href="../index.html#projects" class="back-link">← Back to portfolio</a>
+
+  <div class="proj-header">
+    <span class="proj-eyebrow">Project 02</span>
+    <h1>BulkLoad</h1>
+    <p>Upload messy CSV or Excel files and get clean, validated database records back in seconds, with row-level error reporting.</p>
+    <div class="proj-tags">
+      <span>Node.js</span><span>SQL</span><span>CSV Parsing</span><span>Data Validation</span>
+    </div>
+  </div>
+
+  <div class="mock-window thumb-target">
+    <div class="mock-titlebar">
+      <span class="dot r"></span><span class="dot y"></span><span class="dot g"></span>
+      <span class="mock-url">app.bulkload.io/import</span>
+    </div>
+    <div class="app-shell">
+      <div class="app-sidebar">
+        <span class="side-icon active">⇪</span>
+        <span class="side-icon">🕓</span>
+        <span class="side-icon">▤</span>
+        <span class="side-icon">⚙</span>
+      </div>
+      <div class="app-main">
+        <div class="mock-topbar">
+          <span class="mock-logo"><span class="dotmark"></span>BulkLoad</span>
+          <div class="mock-spacer"></div>
+          <span class="mock-avatar">JL</span>
+        </div>
+        <div class="mock-body">
+
+          <div class="dropzone">
+            <strong>Drop a CSV or Excel file here</strong>
+            or click to browse. Max 50MB.
+          </div>
+
+          <div class="panel">
+            <div class="panel-title">Import Preview — payroll_export_aug.csv</div>
+            <table>
+              <thead><tr><th>Employee ID</th><th>Name</th><th>Department</th><th>Amount</th><th>Status</th></tr></thead>
+              <tbody>
+                <tr><td>EMP-1042</td><td>R. Villareal</td><td>Warehouse</td><td>$1,842.30</td><td><span class="badge badge-green">Valid</span></td></tr>
+                <tr><td>EMP-1043</td><td>C. Mendoza</td><td>Sales</td><td>$2,110.00</td><td><span class="badge badge-green">Valid</span></td></tr>
+                <tr><td>EMP-1044</td><td>K. Bautista</td><td>Sales</td><td>—</td><td><span class="badge badge-amber">Needs Review — missing amount</span></td></tr>
+                <tr><td>EMP-1045</td><td>J. Torres</td><td>Finance</td><td>$1,975.50</td><td><span class="badge badge-green">Valid</span></td></tr>
+                <tr><td>EMP-1046</td><td>A. Domingo</td><td>Warehouse</td><td>$1,840.00</td><td><span class="badge badge-amber">Needs Review — duplicate ID</span></td></tr>
+              </tbody>
+            </table>
+          </div>
+
+          <p style="font-size:12.5px; color:var(--text-faint); font-family:var(--font-mono);">482 rows imported · 3 flagged · 0 rejected</p>
+
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div>
+</body>
+</html>

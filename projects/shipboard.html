@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ShipBoard — Deployment Status Dashboard | John Leinard Javier</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="mock.css">
+<style>
+  body { --accent: #a78bfa; --accent-dim: #8b5cf6; --accent-soft: rgba(167,139,250,0.14); }
+</style>
+</head>
+<body>
+<div class="page-wrap">
+
+  <a href="../index.html#projects" class="back-link">← Back to portfolio</a>
+
+  <div class="proj-header">
+    <span class="proj-eyebrow">Project 05</span>
+    <h1>ShipBoard</h1>
+    <p>A single screen showing every environment's deployment status, so teams stop guessing whether something actually shipped.</p>
+    <div class="proj-tags">
+      <span>Node.js</span><span>REST APIs</span><span>WebSockets</span><span>JSON</span>
+    </div>
+  </div>
+
+  <div class="mock-window thumb-target">
+    <div class="mock-titlebar">
+      <span class="dot r"></span><span class="dot y"></span><span class="dot g"></span>
+      <span class="mock-url">app.shipboard.io/environments</span>
+    </div>
+    <div class="mock-topbar">
+      <span class="mock-logo"><span class="dotmark"></span>ShipBoard</span>
+      <nav class="mock-tabs">
+        <a class="active">Environments</a><a>Deploy History</a><a>Alerts</a><a>Settings</a>
+      </nav>
+      <div class="mock-spacer"></div>
+      <span class="mock-avatar">JL</span>
+    </div>
+    <div class="mock-body">
+
+      <div class="stat-row">
+        <div class="stat-tile"><div class="num">4</div><div class="label">Environments</div></div>
+        <div class="stat-tile"><div class="num">1</div><div class="label">Deploying</div></div>
+        <div class="stat-tile"><div class="num">0</div><div class="label">Failed</div></div>
+      </div>
+
+      <div class="panel">
+        <div class="panel-title">Environment Status</div>
+        <div class="status-grid">
+          <div class="status-card">
+            <h4><span class="status-dot" style="background:#34d399"></span>Dev</h4>
+            <div style="font-family:var(--font-mono); font-size:13px; color:var(--text-dim);">v2.14.1 · Live</div>
+            <div class="status-meta">Last deployed 12 minutes ago</div>
+          </div>
+          <div class="status-card">
+            <h4><span class="status-dot" style="background:var(--accent)"></span>Staging</h4>
+            <div style="font-family:var(--font-mono); font-size:13px; color:var(--text-dim);">v2.14.2 · Deploying</div>
+            <div class="status-meta">Last deployed 2 minutes ago</div>
+          </div>
+          <div class="status-card">
+            <h4><span class="status-dot" style="background:#34d399"></span>UAT</h4>
+            <div style="font-family:var(--font-mono); font-size:13px; color:var(--text-dim);">v2.13.0 · Live</div>
+            <div class="status-meta">Last deployed 3 hours ago</div>
+          </div>
+          <div class="status-card">
+            <h4><span class="status-dot" style="background:#34d399"></span>Production</h4>
+            <div style="font-family:var(--font-mono); font-size:13px; color:var(--text-dim);">v2.13.0 · Live</div>
+            <div class="status-meta">Last deployed 1 day ago</div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+</div>
+</body>
+</html>

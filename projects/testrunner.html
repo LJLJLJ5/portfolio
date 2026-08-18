@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>TestRunner — CI Regression Test Dashboard | John Leinard Javier</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="mock.css">
+<style>
+  body { --accent: #4ade80; --accent-dim: #22c55e; --accent-soft: rgba(74,222,128,0.14); }
+</style>
+</head>
+<body>
+<div class="page-wrap">
+
+  <a href="../index.html#projects" class="back-link">← Back to portfolio</a>
+
+  <div class="proj-header">
+    <span class="proj-eyebrow">Project 09</span>
+    <h1>TestRunner</h1>
+    <p>Runs functional regression tests on every build and posts a clear pass/fail summary before code reaches production.</p>
+    <div class="proj-tags">
+      <span>JavaScript</span><span>Node.js</span><span>Test Automation</span><span>CI/CD</span>
+    </div>
+  </div>
+
+  <div class="mock-window thumb-target">
+    <div class="mock-titlebar">
+      <span class="dot r"></span><span class="dot y"></span><span class="dot g"></span>
+      <span class="mock-url">app.testrunner.io/runs</span>
+    </div>
+    <div class="app-shell">
+      <div class="app-sidebar">
+        <span class="side-icon active">✓</span>
+        <span class="side-icon">▤</span>
+        <span class="side-icon">🕓</span>
+        <span class="side-icon">⚙</span>
+      </div>
+      <div class="app-main">
+        <div class="mock-topbar">
+          <span class="mock-logo"><span class="dotmark"></span>TestRunner</span>
+          <div class="mock-spacer"></div>
+          <span class="mock-avatar">JL</span>
+        </div>
+        <div class="mock-body">
+
+          <div class="stat-row">
+            <div class="stat-tile"><div class="num">142/146</div><div class="label">Tests passed</div></div>
+            <div class="stat-tile"><div class="num">4</div><div class="label">Failed</div></div>
+            <div class="stat-tile"><div class="num">2 min ago</div><div class="label">Last run</div></div>
+          </div>
+
+          <div class="panel">
+            <div class="panel-title">Build #4102 — main branch</div>
+
+            <div style="margin-bottom:14px;">
+              <div style="display:flex; justify-content:space-between; font-size:13px; color:var(--text-dim); margin-bottom:4px;">
+                <span>Checkout Flow</span><span style="font-family:var(--font-mono); font-size:11.5px; color:var(--text-faint);">38/38 passed</span>
+              </div>
+              <div class="progress-track"><div class="progress-fill" style="width: 100%"></div></div>
+            </div>
+
+            <div style="margin-bottom:14px;">
+              <div style="display:flex; justify-content:space-between; font-size:13px; color:var(--text-dim); margin-bottom:4px;">
+                <span>Auth &amp; Sessions</span><span style="font-family:var(--font-mono); font-size:11.5px; color:var(--text-faint);">24/24 passed</span>
+              </div>
+              <div class="progress-track"><div class="progress-fill" style="width: 100%"></div></div>
+            </div>
+
+            <div style="margin-bottom:14px;">
+              <div style="display:flex; justify-content:space-between; font-size:13px; color:var(--text-dim); margin-bottom:4px;">
+                <span>Payroll Calculations</span><span style="font-family:var(--font-mono); font-size:11.5px; color:var(--amber);">6/10 passed</span>
+              </div>
+              <div class="progress-track"><div class="progress-fill" style="width: 60%; background: var(--amber);"></div></div>
+            </div>
+
+            <div style="margin-bottom:14px;">
+              <div style="display:flex; justify-content:space-between; font-size:13px; color:var(--text-dim); margin-bottom:4px;">
+                <span>API Contract Tests</span><span style="font-family:var(--font-mono); font-size:11.5px; color:var(--text-faint);">52/52 passed</span>
+              </div>
+              <div class="progress-track"><div class="progress-fill" style="width: 100%"></div></div>
+            </div>
+
+            <div>
+              <div style="display:flex; justify-content:space-between; font-size:13px; color:var(--text-dim); margin-bottom:4px;">
+                <span>Notification Delivery</span><span style="font-family:var(--font-mono); font-size:11.5px; color:var(--text-faint);">22/22 passed</span>
+              </div>
+              <div class="progress-track"><div class="progress-fill" style="width: 100%"></div></div>
+            </div>
+
+          </div>
+
+          <div class="panel">
+            <div class="panel-title">Build Log — tail</div>
+            <div class="terminal">
+              <div><span class="t-dim">[12:04:11]</span> <span class="t-ok">✓</span> Checkout Flow — 38/38 passed</div>
+              <div><span class="t-dim">[12:04:15]</span> <span class="t-ok">✓</span> Auth &amp; Sessions — 24/24 passed</div>
+              <div><span class="t-dim">[12:04:22]</span> <span class="t-warn">✗</span> Payroll Calculations — 6/10 passed</div>
+              <div><span class="t-dim">[12:04:22]</span> <span class="t-warn">  overtime_rate_applies_after_40h — expected 612.50, got 600.00</span></div>
+              <div><span class="t-dim">[12:04:22]</span> <span class="t-warn">  tax_bracket_rounding_edge_case — expected 84.12, got 84.13</span></div>
+              <div><span class="t-dim">[12:04:22]</span> <span class="t-warn">  holiday_pay_multiplier — expected 1.5x, got 1.0x</span></div>
+              <div><span class="t-dim">[12:04:22]</span> <span class="t-warn">  void_check_reversal — timeout after 5000ms</span></div>
+              <div><span class="t-dim">[12:04:29]</span> <span class="t-ok">✓</span> API Contract Tests — 52/52 passed</div>
+              <div><span class="t-dim">[12:04:33]</span> <span class="t-ok">✓</span> Notification Delivery — 22/22 passed</div>
+              <div><span class="t-accent">build #4102 — 142/146 passed · 4 failed · flagged for review</span></div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div>
+</body>
+</html>

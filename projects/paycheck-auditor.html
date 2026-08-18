@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>PayCheck Auditor — Payroll Anomaly Detection | John Leinard Javier</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="mock.css">
+<style>
+  body { --accent: #fbbf24; --accent-dim: #f59e0b; --accent-soft: rgba(251,191,36,0.14); }
+</style>
+</head>
+<body>
+<div class="page-wrap">
+
+  <a href="../index.html#projects" class="back-link">← Back to portfolio</a>
+
+  <div class="proj-header">
+    <span class="proj-eyebrow">Project 04</span>
+    <h1>PayCheck Auditor</h1>
+    <p>Scans payroll exports for calculation errors and edge cases before they ever reach an employee's paycheck.</p>
+    <div class="proj-tags">
+      <span>Python</span><span>Pandas</span><span>JavaScript</span><span>Automation Scripts</span>
+    </div>
+  </div>
+
+  <div class="mock-window thumb-target">
+    <div class="mock-titlebar">
+      <span class="dot r"></span><span class="dot y"></span><span class="dot g"></span>
+      <span class="mock-url">app.paycheckauditor.io/review</span>
+    </div>
+    <div class="mock-topbar">
+      <span class="mock-logo"><span class="dotmark"></span>PayCheck Auditor</span>
+      <nav class="mock-tabs">
+        <a class="active">Review</a><a>Runs</a><a>Rules</a><a>Settings</a>
+      </nav>
+      <div class="mock-spacer"></div>
+      <span class="mock-avatar">JL</span>
+    </div>
+    <div class="mock-body">
+
+      <div class="stat-row">
+        <div class="stat-tile"><div class="num">1,204</div><div class="label">Records scanned</div></div>
+        <div class="stat-tile"><div class="num">3</div><div class="label">Anomalies found</div></div>
+        <div class="stat-tile"><div class="num">99.7%</div><div class="label">Clean</div></div>
+      </div>
+
+      <div class="panel">
+        <div class="panel-title">Discrepancy by Department</div>
+        <div class="chart-row">
+          <div class="chart-bar-col">
+            <div class="chart-bar" style="height: 62%"></div>
+            <div class="chart-bar-label">Warehouse<br>2 issues</div>
+          </div>
+          <div class="chart-bar-col">
+            <div class="chart-bar" style="height: 31%"></div>
+            <div class="chart-bar-label">Customer Support<br>1 issue</div>
+          </div>
+          <div class="chart-bar-col">
+            <div class="chart-bar" style="height: 31%"></div>
+            <div class="chart-bar-label">Field Sales<br>1 issue</div>
+          </div>
+          <div class="chart-bar-col">
+            <div class="chart-bar" style="height: 4%"></div>
+            <div class="chart-bar-label">Finance<br>0 issues</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="panel">
+        <div class="panel-title">Flagged Records — Aug 2026 Payroll Run</div>
+        <table>
+          <thead><tr><th>Employee</th><th>Department</th><th>Expected</th><th>Calculated</th><th>Issue</th></tr></thead>
+          <tbody>
+            <tr><td>Renz Villareal</td><td>Warehouse</td><td>$1,842.30</td><td>$1,961.10</td><td><span class="badge badge-red">Overtime miscalculated</span></td></tr>
+            <tr><td>Camille Ibarra</td><td>Customer Support</td><td>$2,105.00</td><td>$1,980.50</td><td><span class="badge badge-red">Duplicate deduction</span></td></tr>
+            <tr><td>Nathaniel Cruz</td><td>Field Sales</td><td>$2,640.75</td><td>$2,640.75</td><td><span class="badge badge-red">Missing tax adjustment</span></td></tr>
+          </tbody>
+        </table>
+      </div>
+
+    </div>
+  </div>
+
+</div>
+</body>
+</html>

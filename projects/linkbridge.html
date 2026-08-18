@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>LinkBridge — Enterprise Integration Dashboard | John Leinard Javier</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="mock.css">
+<style>
+  body { --accent: #22d3ee; --accent-dim: #06b6d4; --accent-soft: rgba(34,211,238,0.14); }
+</style>
+</head>
+<body>
+<div class="page-wrap">
+
+  <a href="../index.html#projects" class="back-link">← Back to portfolio</a>
+
+  <div class="proj-header">
+    <span class="proj-eyebrow">Project 07</span>
+    <h1>LinkBridge</h1>
+    <p>Connects two systems that were never meant to talk to each other by transforming and syncing data between REST and XML APIs.</p>
+    <div class="proj-tags">
+      <span>Node.js</span><span>REST/XML APIs</span><span>JSON</span><span>Enterprise Integration</span>
+    </div>
+  </div>
+
+  <div class="mock-window thumb-target">
+    <div class="mock-titlebar">
+      <span class="dot r"></span><span class="dot y"></span><span class="dot g"></span>
+      <span class="mock-url">app.linkbridge.io/integrations</span>
+    </div>
+    <div class="mock-topbar">
+      <span class="mock-logo"><span class="dotmark"></span>LinkBridge</span>
+      <nav class="mock-tabs">
+        <a class="active">Integrations</a><a>Logs</a><a>Mappings</a><a>Settings</a>
+      </nav>
+      <div class="mock-spacer"></div>
+      <span class="mock-avatar">JL</span>
+    </div>
+    <div class="mock-body">
+
+      <div class="panel">
+        <div class="panel-title">Active Integration — Orders Sync</div>
+        <div class="two-col">
+          <div class="node-box">
+            <strong>Shopify</strong> (REST / JSON)
+            <div class="node-sub">Source system</div>
+          </div>
+          <div class="node-box">
+            <strong>SAP ERP</strong> (SOAP / XML)
+            <div class="node-sub">Target system</div>
+          </div>
+        </div>
+        <p style="text-align:center; margin-top:12px; font-size:12px; font-family:var(--font-mono); color:var(--text-faint);">↔ syncing every 5 min</p>
+      </div>
+
+      <div class="panel">
+        <div class="panel-title">Recent Sync Events</div>
+        <div class="terminal">
+          <div><span class="t-dim">10:42 AM</span>&nbsp; <span class="t-ok">✓</span> Order #10293 synced — Shopify → SAP</div>
+          <div><span class="t-dim">10:37 AM</span>&nbsp; <span class="t-ok">✓</span> SKU-4471 inventory update synced — SAP → Shopify</div>
+          <div><span class="t-dim">10:31 AM</span>&nbsp; <span class="t-warn">⟳</span> Order #10291 retrying — Shopify → SAP</div>
+          <div><span class="t-dim">10:25 AM</span>&nbsp; <span class="t-ok">✓</span> Customer record — J. Alvarado synced — Shopify → SAP</div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+</div>
+</body>
+</html>

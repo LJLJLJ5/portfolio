@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>FlowForge — Workflow Automation Dashboard | John Leinard Javier</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="mock.css">
+</head>
+<body>
+<div class="page-wrap">
+
+  <a href="../index.html#projects" class="back-link">← Back to portfolio</a>
+
+  <div class="proj-header">
+    <span class="proj-eyebrow">Project 01</span>
+    <h1>FlowForge</h1>
+    <p>Turns manual multi-step approval processes into automated, trackable workflows with role-based routing and notifications.</p>
+    <div class="proj-tags">
+      <span>Node.js</span><span>Express</span><span>PostgreSQL</span><span>REST API</span>
+    </div>
+  </div>
+
+  <div class="mock-window thumb-target">
+    <div class="mock-titlebar">
+      <span class="dot r"></span><span class="dot y"></span><span class="dot g"></span>
+      <span class="mock-url">app.flowforge.io/dashboard</span>
+    </div>
+    <div class="mock-topbar">
+      <span class="mock-logo"><span class="dotmark"></span>FlowForge</span>
+      <nav class="mock-tabs">
+        <a class="active">Dashboard</a><a>Workflows</a><a>Approvals</a><a>Settings</a>
+      </nav>
+      <div class="mock-spacer"></div>
+      <span class="mock-avatar">JL</span>
+    </div>
+    <div class="mock-body">
+
+      <div class="stat-row">
+        <div class="stat-tile"><div class="num">128</div><div class="label">Workflows automated</div></div>
+        <div class="stat-tile"><div class="num">42</div><div class="label">Active this week</div></div>
+        <div class="stat-tile"><div class="num">3.2m</div><div class="label">Avg. approval time</div></div>
+      </div>
+
+      <div class="panel">
+        <div class="panel-title">Pending Approvals</div>
+        <table>
+          <thead><tr><th>Request</th><th>Requester</th><th>Amount</th><th>Status</th></tr></thead>
+          <tbody>
+            <tr><td>Vendor onboarding — Delta Logistics</td><td>M. Reyes</td><td>—</td><td><span class="badge badge-amber">Awaiting Finance</span></td></tr>
+            <tr><td>Expense report #4471</td><td>A. Cruz</td><td>$1,240.00</td><td><span class="badge badge-teal">In Review</span></td></tr>
+            <tr><td>Contract renewal — Northwind</td><td>K. Santos</td><td>—</td><td><span class="badge badge-green">Approved</span></td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="panel">
+        <div class="panel-title">Active Workflows</div>
+        <div class="kanban">
+          <div>
+            <div class="kanban-col-title">Submitted <span>4</span></div>
+            <div class="kcard">Budget increase — Q3 marketing<span class="kcard-tag">Started 2h ago</span></div>
+            <div class="kcard">New hire equipment request<span class="kcard-tag">Started 5h ago</span></div>
+          </div>
+          <div>
+            <div class="kanban-col-title">In Review <span>3</span></div>
+            <div class="kcard">PO approval — Office supplies<span class="kcard-tag">1 of 2 approvers</span></div>
+          </div>
+          <div>
+            <div class="kanban-col-title">Approved <span>7</span></div>
+            <div class="kcard">Travel request — J. Dela Cruz<span class="kcard-tag">Completed</span></div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+</div>
+</body>
+</html>

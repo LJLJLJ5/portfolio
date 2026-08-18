@@ -1,0 +1,386 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Resume — John Leinard Javier</title>
+<meta name="description" content="Resume of John Leinard Javier, Full-Stack JavaScript Developer based in the Philippines.">
+<link rel="icon" type="image/png" href="favicon.png">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+<style>
+  /* ---- Resume-specific styles (black & white, print-friendly card) ---- */
+
+  :root {
+    --accent: #101114;
+    --accent-dim: #101114;
+  }
+
+  body.resume-body {
+    background: var(--bg);
+    padding: 48px 20px 80px;
+  }
+
+  .resume-toolbar {
+    max-width: 800px;
+    margin: 0 auto 24px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .back-link {
+    font-family: var(--font-mono);
+    font-size: 14px;
+    color: var(--text-dim);
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+  }
+
+  .back-link:hover {
+    color: var(--accent);
+  }
+
+  .print-btn {
+    font-family: var(--font-mono);
+    font-size: 13px;
+  }
+
+  .resume-page {
+    max-width: 800px;
+    margin: 0 auto;
+    background: #ffffff;
+    color: #1c1e22;
+    border-radius: 8px;
+    padding: 56px 60px;
+    box-shadow: 0 20px 60px rgba(0,0,0,0.45);
+  }
+
+  .resume-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 24px;
+    border-bottom: 2px solid #1c1e22;
+    padding-bottom: 18px;
+    margin-bottom: 24px;
+  }
+
+  .resume-header h1 {
+    font-family: var(--font-head);
+    font-size: 1.9rem;
+    color: #101114;
+    margin-bottom: 4px;
+  }
+
+  .resume-role {
+    font-family: var(--font-mono);
+    font-size: 14px;
+    color: var(--accent-dim);
+    font-weight: 500;
+  }
+
+  .resume-contact {
+    text-align: right;
+    font-size: 13px;
+    color: #4a4e57;
+    line-height: 1.7;
+    white-space: nowrap;
+  }
+
+  .resume-contact a {
+    color: #4a4e57;
+  }
+
+  .resume-section {
+    margin-bottom: 26px;
+  }
+
+  .resume-section:last-child {
+    margin-bottom: 0;
+  }
+
+  .resume-section h2 {
+    font-family: var(--font-mono);
+    font-size: 12px;
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    color: var(--accent-dim);
+    border-bottom: 1px solid #d8d5cc;
+    padding-bottom: 6px;
+    margin-bottom: 14px;
+    font-weight: 600;
+  }
+
+  .resume-summary {
+    font-size: 14.5px;
+    color: #2b2e34;
+    max-width: 640px;
+  }
+
+  .resume-job {
+    margin-bottom: 18px;
+  }
+
+  .resume-job:last-child {
+    margin-bottom: 0;
+  }
+
+  .resume-job-head {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    gap: 12px;
+    margin-bottom: 3px;
+    flex-wrap: wrap;
+  }
+
+  .resume-job-title {
+    font-weight: 700;
+    font-size: 15px;
+    color: #101114;
+  }
+
+  .resume-job-company {
+    font-size: 13.5px;
+    color: var(--accent-dim);
+    font-family: var(--font-mono);
+  }
+
+  .resume-job-date {
+    font-family: var(--font-mono);
+    font-size: 12.5px;
+    color: #6b6f78;
+    white-space: nowrap;
+  }
+
+  .resume-job ul {
+    margin-top: 6px;
+    padding-left: 18px;
+    list-style: disc;
+  }
+
+  .resume-job ul li {
+    font-size: 13.5px;
+    color: #33363c;
+    margin-bottom: 4px;
+    line-height: 1.55;
+  }
+
+  .resume-skills-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 6px 24px;
+  }
+
+  .resume-skills-grid div {
+    font-size: 13px;
+  }
+
+  .resume-skills-grid strong {
+    font-family: var(--font-mono);
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    color: #6b6f78;
+    display: block;
+    margin-bottom: 3px;
+  }
+
+  .resume-edu-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    flex-wrap: wrap;
+    gap: 8px;
+  }
+
+  .resume-edu-title {
+    font-weight: 700;
+    font-size: 14.5px;
+    color: #101114;
+  }
+
+  .resume-edu-sub {
+    font-size: 13px;
+    color: #4a4e57;
+  }
+
+  .resume-edu-date {
+    font-family: var(--font-mono);
+    font-size: 12.5px;
+    color: #6b6f78;
+  }
+
+  /* ---- Print ---- */
+  @media print {
+    @page {
+      size: letter;
+      margin: 0.35in;
+    }
+
+    body.resume-body {
+      background: #fff;
+      padding: 0;
+    }
+
+    .resume-toolbar {
+      display: none;
+    }
+
+    .resume-page {
+      box-shadow: none;
+      border-radius: 0;
+      max-width: 100%;
+      padding: 0;
+      background: #fff;
+    }
+
+    .resume-header { padding-bottom: 12px; margin-bottom: 14px; }
+    .resume-header h1 { font-size: 1.55rem; }
+    .resume-section { margin-bottom: 14px; }
+    .resume-section h2 { margin-bottom: 8px; padding-bottom: 3px; font-size: 11px; }
+    .resume-summary { font-size: 12.5px; }
+    .resume-job { margin-bottom: 10px; }
+    .resume-job-title { font-size: 13.5px; }
+    .resume-job ul { margin-top: 3px; }
+    .resume-job ul li { font-size: 12px; margin-bottom: 1px; line-height: 1.4; }
+    .resume-skills-grid { gap: 4px 24px; }
+    .resume-skills-grid div { font-size: 12px; }
+  }
+
+  @media (max-width: 700px) {
+    .resume-page {
+      padding: 32px 24px;
+    }
+
+    .resume-header {
+      flex-direction: column;
+    }
+
+    .resume-contact {
+      text-align: left;
+    }
+
+    .resume-job-head {
+      flex-direction: column;
+      gap: 2px;
+    }
+
+    .resume-skills-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>
+</head>
+<body class="resume-body">
+
+  <div class="resume-toolbar">
+    <a href="index.html" class="back-link">← Back to portfolio</a>
+    <button class="btn btn-outline print-btn" onclick="window.print()">Print / Save as PDF</button>
+  </div>
+
+  <main class="resume-page">
+
+    <div class="resume-header">
+      <div>
+        <h1>John Leinard Javier</h1>
+        <div class="resume-role">Full-Stack JavaScript Developer</div>
+      </div>
+      <div class="resume-contact">
+        javierjohnleinard@gmail.com<br>
+        +63 955 912 8627 (WhatsApp / Viber)<br>
+        johnleinardjavier.com<br>
+        Philippines
+      </div>
+    </div>
+
+    <div class="resume-section">
+      <h2>Summary</h2>
+      <p class="resume-summary">Full-stack JavaScript developer with 5+ years building Node.js applications, REST APIs, and cloud-integrated tools for large enterprise teams.</p>
+    </div>
+
+    <div class="resume-section">
+      <h2>Experience</h2>
+
+      <div class="resume-job">
+        <div class="resume-job-head">
+          <span class="resume-job-title">Product Owner / Dev Lead</span>
+          <span class="resume-job-date">Sept 2025 – Present</span>
+        </div>
+        <div class="resume-job-company">Accenture, Inc.</div>
+        <ul>
+          <li>Lead a cross-functional team delivering enterprise applications on the ServiceNow platform for an Accenture client.</li>
+          <li>Translate business requirements into scoped technical work, prioritizing the backlog and unblocking developers day to day.</li>
+          <li>Coordinate with stakeholders across departments to keep releases predictable and on schedule.</li>
+        </ul>
+      </div>
+
+      <div class="resume-job">
+        <div class="resume-job-head">
+          <span class="resume-job-title">Developer / Operations Engineer</span>
+          <span class="resume-job-date">Apr 2023 – Aug 2025</span>
+        </div>
+        <div class="resume-job-company">Accenture, Inc.</div>
+        <ul>
+          <li>Built and maintained JavaScript applications and services supporting enterprise operations, including data and payroll processing fixes.</li>
+          <li>Diagnosed and resolved production issues under time pressure, keeping downstream systems and reporting accurate.</li>
+          <li>Worked directly with cloud infrastructure to support application deployments and monitoring.</li>
+        </ul>
+      </div>
+
+      <div class="resume-job">
+        <div class="resume-job-head">
+          <span class="resume-job-title">Associate Software Engineer</span>
+          <span class="resume-job-date">Aug 2021 – Mar 2023</span>
+        </div>
+        <div class="resume-job-company">Accenture, Inc.</div>
+        <ul>
+          <li>Developed JavaScript features and fixes as part of an enterprise application team, working closely with QA and senior engineers.</li>
+          <li>Earned Alibaba Cloud ACA, ACP, and Developer certifications while contributing to cloud-based components of the application.</li>
+          <li>Investigated and corrected data discrepancies, building an early foundation in production data integrity work.</li>
+        </ul>
+      </div>
+
+      <div class="resume-job">
+        <div class="resume-job-head">
+          <span class="resume-job-title">Software Developer Intern</span>
+          <span class="resume-job-date">Sep 2020 – Jan 2021</span>
+        </div>
+        <div class="resume-job-company">Questronix Corporation</div>
+        <ul>
+          <li>Wrote Python scripts to support internal tooling and development tasks under senior developer guidance.</li>
+          <li>Gained first hands-on exposure to real-world software development practices and version control.</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="resume-section">
+      <h2>Skills</h2>
+      <div class="resume-skills-grid">
+        <div><strong>Core</strong>JavaScript, Node.js, Express, REST APIs</div>
+        <div><strong>Backend &amp; Data</strong>SQL, MySQL / PostgreSQL, Python, JSON / XML</div>
+        <div><strong>Cloud</strong>AWS, Alibaba Cloud (ACA, ACP, Developer)</div>
+        <div><strong>Practices</strong>Agile / Scrum, CI/CD, Test Automation</div>
+      </div>
+    </div>
+
+    <div class="resume-section">
+      <h2>Education</h2>
+      <div class="resume-edu-row">
+        <div>
+          <div class="resume-edu-title">B.S. Computer Engineering</div>
+          <div class="resume-edu-sub">Pamantasan ng Cabuyao</div>
+        </div>
+        <div class="resume-edu-date">2015 – 2021</div>
+      </div>
+    </div>
+
+  </main>
+
+</body>
+</html>

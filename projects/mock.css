@@ -1,0 +1,293 @@
+/* Shared "app window" mockup chrome — used by every project detail page.
+   Keeps all 10 mockups visually consistent with the v1 portfolio theme. */
+
+:root {
+  --bg: #0a0e14;
+  --bg-alt: #0f1420;
+  --surface: #11161f;
+  --surface-2: #161d29;
+  --border: #1f2733;
+  --border-hover: #2a3444;
+  --text: #e6e9ef;
+  --text-dim: #9aa4b2;
+  --text-faint: #626d7d;
+  --accent: #2dd4bf;
+  --accent-dim: #1fa896;
+  --accent-soft: rgba(45, 212, 191, 0.12);
+  --red: #f87171;
+  --amber: #fbbf24;
+  --green: #34d399;
+  --font-sans: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  --font-head: 'Space Grotesk', var(--font-sans);
+  --font-mono: 'JetBrains Mono', ui-monospace, monospace;
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+  background: var(--bg);
+  color: var(--text);
+  font-family: var(--font-sans);
+  padding: 32px 20px 60px;
+}
+
+.page-wrap { max-width: 900px; margin: 0 auto; }
+
+.back-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  color: var(--text-dim);
+  text-decoration: none;
+  font-size: 14px;
+  font-family: var(--font-mono);
+  margin-bottom: 24px;
+}
+.back-link:hover { color: var(--accent); }
+
+.proj-header { margin-bottom: 24px; }
+.proj-eyebrow {
+  font-family: var(--font-mono);
+  color: var(--accent);
+  font-size: 12.5px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  display: block;
+  margin-bottom: 8px;
+}
+.proj-header h1 {
+  font-family: var(--font-head);
+  font-size: clamp(1.6rem, 4vw, 2.2rem);
+  letter-spacing: -0.02em;
+  margin-bottom: 8px;
+}
+.proj-header p {
+  color: var(--text-dim);
+  max-width: 560px;
+  font-size: 0.98rem;
+}
+.proj-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 14px;
+}
+.proj-tags span {
+  font-family: var(--font-mono);
+  font-size: 11.5px;
+  color: var(--text-faint);
+  background: var(--bg-alt);
+  border: 1px solid var(--border);
+  padding: 4px 10px;
+  border-radius: 5px;
+}
+
+/* ---- fake browser/app window ---- */
+.mock-window {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 30px 60px -20px rgba(0,0,0,0.6);
+}
+
+.mock-titlebar {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 14px;
+  background: var(--bg-alt);
+  border-bottom: 1px solid var(--border);
+}
+.mock-titlebar .dot { width: 10px; height: 10px; border-radius: 50%; }
+.mock-titlebar .dot.r { background: #f87171; }
+.mock-titlebar .dot.y { background: #fbbf24; }
+.mock-titlebar .dot.g { background: #34d399; }
+.mock-url {
+  margin-left: 10px;
+  font-family: var(--font-mono);
+  font-size: 11.5px;
+  color: var(--text-faint);
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 5px;
+  padding: 3px 10px;
+}
+
+.mock-topbar {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  padding: 14px 20px;
+  border-bottom: 1px solid var(--border);
+  background: var(--surface);
+}
+.mock-logo {
+  font-family: var(--font-head);
+  font-weight: 600;
+  font-size: 15px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.mock-logo .dotmark { width: 8px; height: 8px; border-radius: 2px; background: var(--accent); display: inline-block; }
+.mock-tabs { display: flex; gap: 18px; font-size: 13px; color: var(--text-faint); }
+.mock-tabs a.active { color: var(--accent); }
+.mock-spacer { flex: 1; }
+.mock-avatar {
+  width: 26px; height: 26px; border-radius: 50%;
+  background: var(--accent-soft); color: var(--accent);
+  font-family: var(--font-mono); font-size: 11px;
+  display: flex; align-items: center; justify-content: center;
+}
+
+.mock-body {
+  padding: 22px;
+  background: var(--bg);
+  min-height: 420px;
+}
+
+/* ---- reusable content primitives ---- */
+.stat-row { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; margin-bottom: 18px; }
+.stat-tile {
+  background: var(--surface); border: 1px solid var(--border); border-radius: 8px;
+  padding: 14px 16px;
+}
+.stat-tile .num { font-family: var(--font-head); font-size: 1.4rem; color: var(--accent); }
+.stat-tile .label { font-size: 12px; color: var(--text-faint); margin-top: 2px; }
+
+.panel {
+  background: var(--surface); border: 1px solid var(--border); border-radius: 8px;
+  padding: 16px; margin-bottom: 14px;
+}
+.panel-title { font-size: 12.5px; color: var(--text-faint); font-family: var(--font-mono); text-transform: uppercase; letter-spacing: 0.06em; margin-bottom: 12px; }
+
+table { width: 100%; border-collapse: collapse; font-size: 13px; }
+th { text-align: left; color: var(--text-faint); font-weight: 500; font-size: 11.5px; text-transform: uppercase; letter-spacing: 0.04em; padding: 8px 10px; border-bottom: 1px solid var(--border); }
+td { padding: 10px 10px; border-bottom: 1px solid var(--border); color: var(--text-dim); }
+tr:last-child td { border-bottom: none; }
+
+.badge { display: inline-block; font-size: 11px; font-family: var(--font-mono); padding: 3px 9px; border-radius: 20px; }
+.badge-green { background: rgba(52,211,153,0.12); color: var(--green); }
+.badge-amber { background: rgba(251,191,36,0.12); color: var(--amber); }
+.badge-red { background: rgba(248,113,113,0.12); color: var(--red); }
+.badge-teal { background: var(--accent-soft); color: var(--accent); }
+.badge-grey { background: var(--surface-2); color: var(--text-faint); }
+
+.kanban { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; }
+.kanban-col-title { font-size: 12px; color: var(--text-faint); font-family: var(--font-mono); text-transform: uppercase; margin-bottom: 10px; display: flex; justify-content: space-between; }
+.kcard { background: var(--surface); border: 1px solid var(--border); border-radius: 6px; padding: 10px 12px; margin-bottom: 8px; font-size: 12.5px; }
+.kcard .kcard-tag { font-size: 10.5px; color: var(--accent); font-family: var(--font-mono); display: block; margin-top: 6px; }
+
+.bar-row { display: flex; align-items: center; gap: 10px; margin-bottom: 10px; font-size: 12px; color: var(--text-dim); }
+.bar-track { flex: 1; height: 8px; background: var(--surface-2); border-radius: 4px; overflow: hidden; }
+.bar-fill { height: 100%; background: var(--accent); border-radius: 4px; }
+
+.progress-track { height: 8px; background: var(--surface-2); border-radius: 4px; overflow: hidden; margin: 10px 0 4px; }
+.progress-fill { height: 100%; background: var(--accent); }
+
+.dropzone {
+  border: 1.5px dashed var(--border-hover); border-radius: 8px; padding: 26px;
+  text-align: center; color: var(--text-faint); font-size: 13px; margin-bottom: 16px;
+}
+.dropzone strong { color: var(--text-dim); display: block; margin-bottom: 4px; font-size: 14px; }
+
+.checklist { list-style: none; }
+.checklist li { display: flex; align-items: center; gap: 10px; padding: 10px 0; border-bottom: 1px solid var(--border); font-size: 13.5px; color: var(--text-dim); }
+.checklist li:last-child { border-bottom: none; }
+.checkbox { width: 16px; height: 16px; border-radius: 4px; border: 1.5px solid var(--border-hover); flex-shrink: 0; display: flex; align-items: center; justify-content: center; font-size: 10px; }
+.checkbox.done { background: var(--accent); border-color: var(--accent); color: #06110f; }
+
+.two-col { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+
+.node-box {
+  background: var(--surface); border: 1px solid var(--border-hover); border-radius: 8px;
+  padding: 16px; text-align: center; font-size: 13px; color: var(--text);
+}
+.node-box .node-sub { font-size: 11px; color: var(--text-faint); font-family: var(--font-mono); margin-top: 4px; }
+
+@media (max-width: 640px) {
+  .stat-row, .kanban, .two-col { grid-template-columns: 1fr; }
+}
+
+/* ==========================================================================
+   Extended primitives — for giving each project its own distinct UI paradigm.
+   Every page still wraps its primary visual in a container carrying class
+   "thumb-target" (in addition to whatever else) so the thumbnail-capture
+   script can screenshot it uniformly regardless of internal layout.
+   Each page may override --accent / --accent-dim / --accent-soft inline to
+   give itself its own brand color while keeping the same base palette.
+   ========================================================================== */
+
+/* ---- sidebar app shell ---- */
+.app-shell { display: flex; }
+.app-sidebar {
+  width: 68px; flex-shrink: 0;
+  background: var(--bg-alt); border-right: 1px solid var(--border);
+  display: flex; flex-direction: column; align-items: center;
+  padding: 18px 0; gap: 16px;
+}
+.app-sidebar .side-icon {
+  width: 36px; height: 36px; border-radius: 9px;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 15px; color: var(--text-faint); font-family: var(--font-mono);
+}
+.app-sidebar .side-icon.active { background: var(--accent-soft); color: var(--accent); }
+.app-main { flex: 1; min-width: 0; display: flex; flex-direction: column; }
+.app-main .mock-body { flex: 1; }
+
+/* ---- split list / detail view ---- */
+.split-view { display: flex; min-height: 420px; }
+.split-list { width: 280px; flex-shrink: 0; border-right: 1px solid var(--border); overflow: hidden; }
+.split-list-item {
+  padding: 13px 16px; border-bottom: 1px solid var(--border); border-left: 3px solid transparent;
+  font-size: 12.5px; color: var(--text-dim);
+}
+.split-list-item .sli-title { color: var(--text); font-weight: 600; font-size: 13px; margin-bottom: 3px; }
+.split-list-item .sli-meta { font-size: 11px; color: var(--text-faint); font-family: var(--font-mono); }
+.split-list-item.active { background: var(--accent-soft); border-left-color: var(--accent); }
+.split-detail { flex: 1; padding: 22px; }
+
+/* ---- big status card grid (visual, not tabular) ---- */
+.status-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 14px; }
+.status-card { background: var(--surface); border: 1px solid var(--border); border-radius: 10px; padding: 18px; }
+.status-card .status-dot { width: 9px; height: 9px; border-radius: 50%; display: inline-block; margin-right: 7px; }
+.status-card h4 { font-family: var(--font-head); font-size: 1.02rem; margin-bottom: 6px; font-weight: 600; }
+.status-card .status-meta { font-size: 11.5px; color: var(--text-faint); font-family: var(--font-mono); margin-top: 6px; }
+
+/* ---- vertical bar chart ---- */
+.chart-row { display: flex; align-items: flex-end; gap: 14px; height: 130px; padding: 10px 6px 0; }
+.chart-bar-col { flex: 1; display: flex; flex-direction: column; align-items: center; justify-content: flex-end; height: 100%; }
+.chart-bar { width: 100%; background: var(--accent); border-radius: 4px 4px 0 0; opacity: 0.88; }
+.chart-bar-label { margin-top: 8px; font-size: 10px; color: var(--text-faint); font-family: var(--font-mono); text-align: center; }
+
+/* ---- terminal / log console ---- */
+.terminal {
+  background: #05070a; border: 1px solid var(--border); border-radius: 8px;
+  padding: 16px 18px; font-family: var(--font-mono); font-size: 12.5px; line-height: 1.85;
+  color: #b7c0cc;
+}
+.terminal .t-dim { color: #4b5563; }
+.terminal .t-ok { color: var(--green); }
+.terminal .t-warn { color: var(--amber); }
+.terminal .t-accent { color: var(--accent); }
+
+/* ---- mobile phone frame (for a genuinely different device context) ---- */
+.phone-frame {
+  width: 300px; margin: 0 auto; background: #000;
+  border-radius: 34px; padding: 10px; box-shadow: 0 30px 60px -20px rgba(0,0,0,0.6);
+}
+.phone-screen { background: var(--bg); border-radius: 24px; overflow: hidden; min-height: 540px; }
+.phone-statusbar {
+  display: flex; justify-content: space-between; align-items: center;
+  padding: 12px 20px 2px; font-size: 11px; color: var(--text-dim); font-family: var(--font-mono);
+}
+.phone-body { padding: 18px 18px 24px; }
+
+@media (max-width: 640px) {
+  .app-shell { flex-direction: column; }
+  .app-sidebar { width: 100%; flex-direction: row; justify-content: center; border-right: none; border-bottom: 1px solid var(--border); }
+  .split-view { flex-direction: column; }
+  .split-list { width: 100%; }
+  .status-grid { grid-template-columns: 1fr; }
+}

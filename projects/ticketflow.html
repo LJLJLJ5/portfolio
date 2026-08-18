@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>TicketFlow — Incident Ticketing System | John Leinard Javier</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="mock.css">
+<style>
+  body { --accent: #fb7185; --accent-dim: #f43f5e; --accent-soft: rgba(251,113,133,0.14); }
+</style>
+</head>
+<body>
+<div class="page-wrap">
+
+  <a href="../index.html#projects" class="back-link">← Back to portfolio</a>
+
+  <div class="proj-header">
+    <span class="proj-eyebrow">Project 03</span>
+    <h1>TicketFlow</h1>
+    <p>A lightweight ticketing system for logging, prioritizing, and resolving production incidents, with built-in SLA countdown timers.</p>
+    <div class="proj-tags">
+      <span>JavaScript</span><span>Express</span><span>MySQL</span><span>REST API</span>
+    </div>
+  </div>
+
+  <div class="mock-window thumb-target">
+    <div class="mock-titlebar">
+      <span class="dot r"></span><span class="dot y"></span><span class="dot g"></span>
+      <span class="mock-url">app.ticketflow.io/queue</span>
+    </div>
+    <div class="mock-topbar">
+      <span class="mock-logo"><span class="dotmark"></span>TicketFlow</span>
+      <div class="mock-spacer"></div>
+      <span class="mock-avatar">JL</span>
+    </div>
+    <div class="split-view">
+      <div class="split-list">
+        <div class="split-list-item active">
+          <div class="sli-title">Checkout API returning 500s</div>
+          <div class="sli-meta">INC-2231 · High · 1h 42m</div>
+        </div>
+        <div class="split-list-item">
+          <div class="sli-title">Slow query on orders dashboard</div>
+          <div class="sli-meta">INC-2229 · Medium · 4h 10m</div>
+        </div>
+        <div class="split-list-item">
+          <div class="sli-title">Email notifications delayed 15+ min</div>
+          <div class="sli-meta">INC-2226 · Medium · 2h 55m</div>
+        </div>
+        <div class="split-list-item">
+          <div class="sli-title">Typo in password reset email</div>
+          <div class="sli-meta">INC-2224 · Low · 1d 6h</div>
+        </div>
+        <div class="split-list-item">
+          <div class="sli-title">Login page 502 on EU region</div>
+          <div class="sli-meta">INC-2219 · High · —</div>
+        </div>
+      </div>
+      <div class="split-detail">
+        <h2 style="font-family:var(--font-head); font-size:1.35rem; margin-bottom:12px;">Checkout API returning 500s</h2>
+        <div style="display:flex; gap:8px; margin-bottom:18px;">
+          <span class="badge badge-red">High</span>
+          <span class="badge badge-amber">Investigating</span>
+        </div>
+        <p style="font-size:13px; color:var(--text-dim); margin-bottom:8px;">Assigned to: J. Cruz</p>
+        <p style="font-size:13px; color:var(--text-dim); margin-bottom:8px;">Opened: 3h 18m ago</p>
+        <p style="font-size:13px; color:var(--text-dim);">Last update: 12 minutes ago</p>
+      </div>
+    </div>
+  </div>
+
+</div>
+</body>
+</html>

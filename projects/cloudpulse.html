@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>CloudPulse — Cloud Resource Monitoring | John Leinard Javier</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="mock.css">
+<style>
+  body { --accent: #38bdf8; --accent-dim: #0ea5e9; --accent-soft: rgba(56,189,248,0.14); }
+</style>
+</head>
+<body>
+<div class="page-wrap">
+
+  <a href="../index.html#projects" class="back-link">← Back to portfolio</a>
+
+  <div class="proj-header">
+    <span class="proj-eyebrow">Project 08</span>
+    <h1>CloudPulse</h1>
+    <p>A simple dashboard that pings cloud resources on AWS and Alibaba Cloud and flags anything that's down, slow, or over budget.</p>
+    <div class="proj-tags">
+      <span>Node.js</span><span>AWS SDK</span><span>Alibaba Cloud API</span><span>Cron Jobs</span>
+    </div>
+  </div>
+
+  <div class="mock-window thumb-target">
+    <div class="mock-titlebar">
+      <span class="dot r"></span><span class="dot y"></span><span class="dot g"></span>
+      <span class="mock-url">app.cloudpulse.io/monitor</span>
+    </div>
+    <div class="mock-topbar">
+      <span class="mock-logo"><span class="dotmark"></span>CloudPulse</span>
+      <nav class="mock-tabs">
+        <a class="active">Monitor</a><a>Resources</a><a>Budgets</a><a>Settings</a>
+      </nav>
+      <div class="mock-spacer"></div>
+      <span class="mock-avatar">JL</span>
+    </div>
+    <div class="mock-body">
+
+      <div class="stat-row">
+        <div class="stat-tile"><div class="num">23</div><div class="label">Resources monitored</div></div>
+        <div class="stat-tile"><div class="num">99.95%</div><div class="label">Uptime (30d)</div></div>
+        <div class="stat-tile"><div class="num">$1,840</div><div class="label">MTD spend</div></div>
+      </div>
+
+      <div class="panel">
+        <div class="panel-title">Resource Load — Last 15 min</div>
+        <div class="chart-row">
+          <div class="chart-bar-col">
+            <div class="chart-bar" style="height: 64%"></div>
+            <div class="chart-bar-label">api-prod-ec2-01</div>
+          </div>
+          <div class="chart-bar-col">
+            <div class="chart-bar" style="height: 47%"></div>
+            <div class="chart-bar-label">rds-payroll-cluster</div>
+          </div>
+          <div class="chart-bar-col">
+            <div class="chart-bar" style="height: 91%; background: var(--amber);"></div>
+            <div class="chart-bar-label">alibaba-oss-storage</div>
+          </div>
+          <div class="chart-bar-col">
+            <div class="chart-bar" style="height: 28%"></div>
+            <div class="chart-bar-label">cdn-edge-cache</div>
+          </div>
+          <div class="chart-bar-col">
+            <div class="chart-bar" style="height: 3%; background: var(--red);"></div>
+            <div class="chart-bar-label">ecs-worker-pool-b</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="panel">
+        <div class="panel-title">Flagged Resources</div>
+        <div class="status-grid">
+          <div class="status-card">
+            <h4><span class="status-dot" style="background: var(--red);"></span>ecs-worker-pool-b</h4>
+            <div class="status-meta">Alibaba Cloud · Down — no response</div>
+          </div>
+          <div class="status-card">
+            <h4><span class="status-dot" style="background: var(--amber);"></span>alibaba-oss-storage</h4>
+            <div class="status-meta">Alibaba Cloud · Degraded — 310ms latency</div>
+          </div>
+          <div class="status-card">
+            <h4><span class="status-dot" style="background: var(--green);"></span>cdn-edge-cache</h4>
+            <div class="status-meta">AWS · Healthy — 19ms latency</div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+</div>
+</body>
+</html>

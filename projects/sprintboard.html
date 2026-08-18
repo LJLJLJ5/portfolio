@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SprintBoard — Sprint Planning Kanban | John Leinard Javier</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="mock.css">
+<style>
+  body { --accent: #f472b6; --accent-dim: #ec4899; --accent-soft: rgba(244,114,182,0.14); }
+</style>
+</head>
+<body>
+<div class="page-wrap">
+
+  <a href="../index.html#projects" class="back-link">← Back to portfolio</a>
+
+  <div class="proj-header">
+    <span class="proj-eyebrow">Project 06</span>
+    <h1>SprintBoard</h1>
+    <p>A drag-and-drop Kanban board for backlog refinement and sprint planning, built for small product teams.</p>
+    <div class="proj-tags">
+      <span>JavaScript</span><span>LocalStorage</span><span>Node.js</span><span>HTML5/CSS3</span>
+    </div>
+  </div>
+
+  <div class="mock-window thumb-target">
+    <div class="mock-titlebar">
+      <span class="dot r"></span><span class="dot y"></span><span class="dot g"></span>
+      <span class="mock-url">app.sprintboard.io/sprint-14</span>
+    </div>
+    <div class="app-shell">
+      <div class="app-sidebar">
+        <span class="side-icon active">▤</span>
+        <span class="side-icon">🕓</span>
+        <span class="side-icon">📊</span>
+        <span class="side-icon">⚙</span>
+      </div>
+      <div class="app-main">
+        <div class="mock-topbar">
+          <span class="mock-logo"><span class="dotmark"></span>SprintBoard</span>
+          <div class="mock-spacer"></div>
+          <span class="mock-avatar">JL</span>
+        </div>
+        <div class="mock-body">
+
+          <div class="panel">
+            <div class="panel-title">Sprint 14 — Aug 4–18</div>
+            <div class="kanban">
+              <div>
+                <div class="kanban-col-title">Backlog <span>5</span></div>
+                <div class="kcard">Fix pagination bug on /reports<span class="kcard-tag">M.R. · 3 pts</span></div>
+                <div class="kcard">Add CSV export to invoices view<span class="kcard-tag">D.F. · 5 pts</span></div>
+                <div class="kcard">Migrate legacy webhook handler<span class="kcard-tag">Unassigned · 8 pts</span></div>
+              </div>
+              <div>
+                <div class="kanban-col-title">In Progress <span>3</span></div>
+                <div class="kcard">Refactor auth middleware<span class="kcard-tag">K.S. · 5 pts</span></div>
+                <div class="kcard">Dark mode toggle for settings page<span class="kcard-tag">P.N. · 2 pts</span></div>
+                <div class="kcard">Rate limiting on public API<span class="kcard-tag">L.O. · 3 pts</span></div>
+              </div>
+              <div>
+                <div class="kanban-col-title">Done <span>8</span></div>
+                <div class="kcard">Upgrade Node runtime to v20<span class="kcard-tag">M.R. · 3 pts</span></div>
+                <div class="kcard">Fix flaky checkout integration test<span class="kcard-tag">A.C. · 2 pts</span></div>
+                <div class="kcard">Add empty-state illustration to board<span class="kcard-tag">D.F. · 1 pt</span></div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div>
+</body>
+</html>
